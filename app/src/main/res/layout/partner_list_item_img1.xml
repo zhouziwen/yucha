@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/partner_listItem_Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/image_selector"
+    >
+
+    <ImageView
+        android:id="@+id/pic"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        android:scaleType="fitXY"
+        />
+
+    <TextView
+        android:id="@+id/partner_listItem_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="13dp"
+        android:layout_toRightOf="@id/pic"
+        android:text="合伙人喝的不是钱 而是资源和规则"
+        android:textColor="@color/price_textColor_pressed"
+        android:textSize="15sp"
+        />
+
+    <TextView
+        android:id="@+id/partner_listItem_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/pic"
+        android:layout_marginTop="13dp"
+        android:layout_toRightOf="@id/pic"
+        android:text="2016-11-7"
+        android:textColor="@color/textNomalColor"
+        android:textSize="13sp"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/utilView"
+        android:background="@color/line"
+        />
+
+</RelativeLayout>

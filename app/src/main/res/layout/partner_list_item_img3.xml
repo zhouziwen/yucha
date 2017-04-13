@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/partner_listItem_Layout"
+
+    android:background="@drawable/image_selector"
+    >
+
+
+    <TextView
+        android:id="@+id/partner_listItem_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="合伙人喝的不是钱 而是资源和规则"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textColor="@color/price_textColor_pressed"
+        />
+    <LinearLayout
+        android:id="@+id/img_container"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"
+        android:layout_below="@id/partner_listItem_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+  <ImageView
+      android:id="@+id/pic"
+      android:layout_width="0dp"
+      android:layout_weight="1"
+      android:layout_height="70dp"
+      android:scaleType="fitXY"
+      />
+    <ImageView
+        android:id="@+id/pic1"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="70dp"
+        android:layout_marginLeft="5dp"
+        android:scaleType="fitXY"
+        />
+    <ImageView
+        android:id="@+id/pic2"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="70dp"
+        android:layout_marginLeft="5dp"
+        android:scaleType="fitXY"
+        />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/partner_listItem_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:text="2016-11-7"
+        android:textColor="@color/textNomalColor"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/img_container"
+        />
+
+    <ImageView
+        android:id="@+id/utilView"
+        android:layout_below="@+id/partner_listItem_time"
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/utilView"
+        android:background="@color/line"
+        />
+
+</RelativeLayout>

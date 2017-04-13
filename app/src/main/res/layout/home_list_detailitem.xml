@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+    <TextView
+        android:id="@+id/home_list_detailItem_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="PPR水管"
+        android:gravity="center"
+        android:background="@drawable/btn_selecor"
+        android:drawableRight="@mipmap/home_more"
+        android:padding="10dp"
+        />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/home_list_detailItem_title"
+        android:background="@color/line"
+        />
+    <ImageView
+        android:layout_width="0.5dp"
+        android:layout_height="50dp"
+        android:background="@color/line"
+        android:layout_alignParentRight="true"
+        />
+
+</RelativeLayout>

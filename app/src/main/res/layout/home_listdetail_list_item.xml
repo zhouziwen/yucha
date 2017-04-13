@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:id="@+id/home_listdetail_list_item_layout"
+                android:background="@drawable/image_selector"
+    >
+
+    <ImageView
+        android:id="@+id/home_listDetail_listItem_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/home_hlist_item1"
+        />
+
+    <TextView
+        android:id="@+id/home_listDetail_listItem_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/home_listDetail_listItem_title"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/home_listDetail_listItem_image"
+        android:text="水暖仓库"
+        android:textColor="@color/price_textColor_nomal"
+        />
+
+    <TextView
+        android:id="@+id/home_listDetail_listItem_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/home_listDetail_listItem_type"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="3dp"
+        android:layout_toRightOf="@+id/home_listDetail_listItem_image"
+        android:text="1.71/件"
+        android:textColor="@color/price_viewColor"
+        />
+
+    <TextView
+        android:id="@+id/home_listDetail_listItem_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/home_listDetail_listItem_title"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:text="广东-佛山市"
+        android:textColor="@color/price_textColor_nomal"
+        />
+
+    <TextView
+        android:id="@+id/home_listDetail_listItem_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:text="撒你哦啊是你发搜安覅撒UN覅US订单丰富的"
+        android:textColor="@color/price_textColor_pressed"
+        android:textSize="15sp"
+        android:layout_alignTop="@+id/home_listDetail_listItem_image"
+        android:layout_alignStart="@+id/home_listDetail_listItem_type"/>
+</RelativeLayout>

@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/topPadding"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:context="com.example.hnTea.ui.me.user.FeedbackFragment">
+
+
+    <com.example.hnTea.widget.AppTitleBar
+        android:id="@+id/app_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.example.hnTea.widget.AntiEmoJiEditText
+        android:id="@+id/feedBack_TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dip"
+        android:background="@drawable/msg_edit_bg"
+        android:gravity="top|left"
+        android:hint="输入您的宝贵意见..."
+        android:inputType="textMultiLine"
+        android:lines="10"
+        android:padding="8dip"
+        android:singleLine="false"
+        android:textSize="13sp"
+        />
+
+    <TextView
+        android:id="@+id/save_feedBack"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:text="提交反馈"
+        style="@style/costumBtn_redBg_whiteTxt_style"/>
+
+
+
+
+</LinearLayout>

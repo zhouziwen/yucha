@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/topPadding"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.example.hnTea.ui.me.user.MyOrderFragment">
+
+    <com.example.hnTea.widget.AppTitleBar
+        android:id="@+id/app_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:id="@+id/myOrder_utilView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/line"
+        android:layout_below="@+id/app_title_bar"
+        />
+
+    <RelativeLayout
+        android:id="@+id/myOrder_tab_strip_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="1dp"
+        android:background="@color/white"
+        android:layout_below="@+id/myOrder_utilView"
+        >
+
+        <com.example.hnTea.widget.PagerSlidingTabStrip
+            android:id="@+id/myOrder_sub_tab_strip"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="@color/white"
+            android:textColor="@color/price_textColor_nomal"
+            android:textSize="13sp"
+            app:pstsDividerColor="@android:color/transparent"
+            app:pstsDividerPaddingTopBottom="8dp"
+            app:pstsIndicatorColor="@color/price_viewColor"
+            app:pstsIndicatorHeight="2dp"
+            app:pstsScaleZoomMax="0.1"
+            app:pstsShouldExpand="false"
+            app:pstsSmoothScrollWhenClickTab="false"
+            app:pstsTabPaddingLeftRight="15dp"
+            app:pstsTextSelectedColor="@color/tabBarColor"
+            app:pstsUnderlineColor="@android:color/transparent"
+            />
+    </RelativeLayout>
+
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/myOrder_pager"
+        android:layout_below="@+id/myOrder_tab_strip_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</RelativeLayout>

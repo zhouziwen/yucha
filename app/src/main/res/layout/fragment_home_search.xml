@@ -1,0 +1,148 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/topPadding"
+                tools:context="com.example.hnTea.ui.home.HomeSearchFragment"
+    >
+
+    <include
+        android:id="@+id/search_bar"
+        layout="@layout/seach_bar"
+        />
+
+    <TextView
+        android:id="@+id/home_search_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search_bar"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="15dp"
+        android:text="热门搜索"
+        android:textSize="15sp"
+        android:textColor="@color/price_textColor_pressed"
+        />
+
+    <ImageView
+        android:id="@+id/home_search_divider"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/home_search_tv"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/dividerColor"
+        />
+
+    <LinearLayout
+        android:id="@+id/home_search_lineLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/home_search_divider"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="50dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="变压器"
+            android:gravity="center|left"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="直流接触器"
+            android:gravity="center|left"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="高压接触器"
+            android:gravity="center|left"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/home_search_lineLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/home_search_lineLayout"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="50dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="高压接触器"
+            android:gravity="center|left"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="高压接触器"
+            android:gravity="center|left"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="高压接触器"
+            android:gravity="center|left"
+            />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/home_search_divider1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/home_search_lineLayout1"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/dividerColor"
+        />
+
+    <TextView
+        android:id="@+id/home_search_tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/home_search_divider1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="15dp"
+        android:text="搜索历史"
+        android:textSize="15sp"
+        android:textColor="@color/price_textColor_pressed"
+        />
+
+    <ImageView
+        android:id="@+id/home_search_divider2"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/home_search_tv1"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/dividerColor"
+        />
+
+    <ListView
+        android:id="@+id/home_search_listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/home_search_divider2"
+        android:layout_marginLeft="12dp"
+        android:divider="@color/dividerColor"
+        />
+
+</RelativeLayout>

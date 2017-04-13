@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/userContent_foot_layout"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:background="@color/dividerColor"
+    >
+
+    <RelativeLayout
+        android:id="@+id/userContent_RLayout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/image_selector"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            android:text="头像"
+            android:textColor="@color/price_textColor_pressed"
+            />
+
+        <ImageView
+            android:id="@+id/me_listHeader_icon"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="39dp"
+            android:layout_marginRight="39dp"
+            android:src="@mipmap/default_user"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:drawableRight="@mipmap/home_more"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            />
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_below="@+id/userContent_RLayout"
+        />
+
+</RelativeLayout>

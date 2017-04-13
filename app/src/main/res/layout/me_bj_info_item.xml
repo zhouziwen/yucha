@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="10dp">
+
+    <include layout="@layout/line"
+        android:id="@+id/me_line"/>
+    <TextView
+        android:id="@+id/me_bj_info_title"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:text="第一次报价"
+        android:gravity="center_vertical"
+        android:layout_below="@id/me_line"
+        />
+    <TextView
+        android:id="@+id/me_bj_info_total_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="@color/price_viewColor"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        />
+    <TextView
+        android:id="@+id/me_bj_info_price"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:textSize="14sp"
+        android:textColor="#f23030"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        />
+    <TextView
+        android:id="@+id/me_bj_info_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2016-12-12"
+        android:layout_below="@id/me_bj_info_title"/>
+    <TextView
+        android:id="@+id/me_bj_info_baoZhiQi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="保质期： 12个月"
+        android:layout_below="@id/me_bj_info_title"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/me_bj_info_date"/>
+    <TextView
+        android:id="@+id/me_bj_info_harvest_cycle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="交货日期：2016-01-17"
+        android:lines="1"
+        android:maxEms="10"
+        android:layout_below="@id/me_bj_info_title"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/me_bj_info_baoZhiQi"/>
+
+</RelativeLayout>

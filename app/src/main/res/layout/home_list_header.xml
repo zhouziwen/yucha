@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/fragment_bg"
+    >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/home_listHeader_Pager"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:background="@mipmap/placeholder"
+        />
+
+    <LinearLayout
+        android:id="@+id/home_banner_tips"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_marginTop="150dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        />
+
+    <com.example.hnTea.ui.custom.CustomGridView
+        android:id="@+id/home_listHeader_RecyclerView1"
+        android:layout_width="match_parent"
+        android:layout_height="205dp"
+        android:layout_below="@+id/home_listHeader_Pager"
+        android:background="@color/gray"
+        android:numColumns="4"
+        />
+</RelativeLayout>

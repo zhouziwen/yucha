@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/home_h_recycler_layout"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:background="@drawable/image_selector"
+    >
+
+    <ImageView
+        android:id="@+id/home_h_recycler_image"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        />
+
+    <TextView
+        android:id="@+id/home_h_recycler_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="低压配电设备"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:textSize="12sp"
+        android:textColor="#808080"
+        />
+
+
+</LinearLayout>

@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">HnTea</string>
+    <string name="app_name">电力电</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bar_home">首页</string>
+    <string name="bar_price">询价</string>
+    <string name="bar_present">合伙人</string>
+    <string name="bar_me">我的</string>
+    <string name="price_xun">询价</string>
+    <string name="price_bao">报价</string>
+    <string name="price_xun_project">项目询价</string>
+    <string name="price_xun_single">产品询价</string>
+    <string name="price_bao_project">项目报价</string>
+    <string name="price_bao_single">产品报价</string>
+    <string name="price_project_detail">询价单详情</string>
+    <string name="switch_off">  </string>
+    <string name="switch_on">  </string>
 </resources>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/x_price_single_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/image_selector"
+    >
+
+
+    <TextView
+        android:id="@+id/XPrice_listItem_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:text="【201622223382】GM8系列交流苏克断路器呵呵呵呵呵"
+        android:textColor="@color/price_textColor_pressed"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/XPrice_listItem_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/XPrice_listItem_title"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="2016-11-11"
+        android:padding="3dp"
+        android:textColor="@color/price_textColor_nomal"
+        />
+
+    <TextView
+        android:id="@+id/XPrice_listItem_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/XPrice_listItem_title"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/XPrice_listItem_time"
+        android:drawableLeft="@mipmap/price_brand2"
+        android:text="施耐德"
+        android:gravity="center_vertical"
+        android:textColor="@color/price_textColor_nomal"
+        />
+
+    <TextView
+        android:id="@+id/XPrice_listItem_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/XPrice_listItem_title"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/XPrice_listItem_location"
+        android:drawableLeft="@mipmap/price_amount2"
+        android:text="5台"
+        android:gravity="center_vertical"
+        android:textColor="@color/price_textColor_nomal"
+        />
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/XPrice_listItem_type"
+        />
+
+
+</RelativeLayout>

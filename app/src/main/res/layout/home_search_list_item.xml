@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+                android:id="@+id/homeSearch_list_item_layout"
+              android:layout_width="match_parent"
+              android:layout_height="40dp"
+              android:background="@drawable/btn_selecor"
+    >
+
+    <ImageView
+        android:id="@+id/homeSearch_list_item_view"
+        android:layout_width="20dp"
+        android:layout_height="40dp"
+        />
+
+    <TextView
+        android:id="@+id/homeSearch_list_item_tv"
+        android:layout_toRightOf="@+id/homeSearch_list_item_view"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="变压器"
+        android:gravity="center|left"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:src="@mipmap/home_search_delete"
+        android:layout_marginRight="20dp"
+        />
+
+</RelativeLayout>

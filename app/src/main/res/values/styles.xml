@@ -6,6 +6,123 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@mipmap/lancher_pic</item>
     </style>
+
+    <style name="Theme.BackgroundTranslucent" parent="android:Theme.Translucent">
+        <item name="android:windowBackground">@null</item>
+    </style>
+    <!--//启动页的 theme-->
+    <style name="AppSplash" parent="android:Theme.Light.NoTitleBar.Fullscreen">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@mipmap/lancher_pic</item>
+    </style>
+
+
+    <!-- popWindow 从底部弹出时的style. -->
+    -
+
+    <style name="mypopwindow_anim_style">
+        <item name="android:windowEnterAnimation">@anim/actionsheet_show</item>
+        <item name="android:windowExitAnimation">@anim/actionsheet_hidden</item>
+    </style>
+
+
+
+
+    <style name="tab_RadioBtn_layout">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:button">@null</item>
+    </style>
+
+
+    <style name="price_top_tv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="main_container_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginBottom">50.5dp</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+    <style name="popWindowBg_imgView_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/PopwindowBg</item>
+        <item name="android:alpha">0.1</item>
+    </style>
+
+    <style name="costumBtn_redBg_whiteTxt_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:background">@drawable/addpartner_selector</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="app_title_action_base_style">
+        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:background">@drawable/btn_selecor</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minWidth">@dimen/width_commen</item>
+        <item name="android:textSize">@dimen/textSize_commen</item>
+    </style>
+
+    <style name="XPrice_listItem_textBase_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/price_textColor_nomal</item>
+    </style>
+
+    <style name="XPrice_listItem_titleTxt">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:textColor">@color/price_textColor_pressed</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="bottom_toast_layout_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxHeight">100dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:layout_marginLeft">10dip</item>
+        <item name="android:layout_marginRight">10dip</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/toast_bg</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="costomDialog_content_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_margin">20dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="costomDialog_btnBase_style">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/dialogTxt_commom</item>
+    </style>
+
 
 </resources>

@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:id="@+id/topPadding"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="com.example.hnTea.ui.me.DlDFragment">
+
+    <com.example.hnTea.widget.AppTitleBar
+        android:id="@+id/app_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+        android:id="@+id/helper_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/app_title_bar"
+        >
+
+        <ImageView
+            android:id="@+id/dld_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon1"
+            android:layout_below="@+id/app_title_bar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="49dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="电力电V2.2"
+            android:textColor="@color/price_textColor_pressed"
+            android:textSize="17sp"
+            android:layout_below="@+id/dld_icon"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="河南太能电气股份有限公司"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="35dp"
+            />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="8sp"
+            android:text="Copyright 2015-2016 www.dianlidian.com All Rights Reserved 豫ICP备14007708号-7"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            />
+
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/helper_webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/app_title_bar"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>

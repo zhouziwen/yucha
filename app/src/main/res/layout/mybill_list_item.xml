@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:background="@mipmap/bill_bg">
+
+    <TextView
+        android:id="@+id/bill_orderNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:text="订单编号1931241231"
+        />
+
+    <TextView
+        android:id="@+id/bill_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:drawableLeft="@mipmap/bill_tishi"
+        android:text="未索取"
+        />
+
+    <TextView
+        android:id="@+id/bill_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bill_orderNum"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="2016-11-21"
+        android:textColor="@color/price_textColor_pressed"
+        android:textSize="15sp"
+        />
+
+    <TextView
+        android:id="@+id/bill_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bill_orderNum"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/bill_time"
+        android:text="直流变压器"
+        android:textColor="@color/price_textColor_pressed"
+        android:textSize="15sp"
+        />
+
+    <TextView
+        android:id="@+id/bill_noPrice"
+        android:layout_width="80dp"
+        android:layout_height="34dp"
+        android:background="@drawable/draw_sms"
+        android:gravity="center"
+        android:text="索要发票"
+        android:textColor="@color/tipsColor"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        android:layout_below="@+id/bill_state"
+        android:layout_alignRight="@+id/bill_state"
+        android:layout_alignEnd="@+id/bill_state"/>
+
+    <TextView
+        android:id="@+id/bill_Price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/bill_state"
+        android:layout_alignRight="@+id/bill_state"
+        android:layout_alignTop="@+id/bill_title"
+        android:text="￥7800.00"
+        android:textColor="@color/tipsColor"
+        android:textSize="17sp"
+        android:visibility="gone"/>
+
+</RelativeLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+                    android:id="@+id/item_view"
+              android:layout_width="match_parent"
+              android:layout_height="120dp">
+    <CheckBox
+        android:id="@+id/shop_car_cicle"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/shop_car_checkbox_selector"
+        android:button="@null"
+        android:layout_marginLeft="12dp"
+        android:layout_centerVertical="true"/>
+    <ImageView
+        android:id="@+id/shop_car_goods_icon"
+        android:layout_width="110dp"
+        android:layout_height="115dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/shop_car_cicle"/>
+    <TextView
+        android:id="@+id/goods_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:lines="2"
+        android:ellipsize="marquee"
+        android:layout_toRightOf="@id/shop_car_goods_icon"
+        android:text="德国原产西门子 直流接触器 3RT1025-1BB40 3RT1025"
+        android:padding="8dp"
+        android:layout_marginRight="14dp"
+        android:layout_marginLeft="10dp"
+        />
+    <TextView
+        android:id="@+id/shop_car_goods_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_toRightOf="@id/shop_car_goods_icon"
+        android:layout_alignBottom="@id/shop_car_goods_icon"
+        android:layout_alignLeft="@+id/goods_detail"
+        android:textSize="17sp"
+        android:textColor="@color/me_price_red_title"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentEnd="true"
+        android:padding="8dp"
+        android:layout_alignBottom="@id/shop_car_goods_price"
+        android:layout_marginRight="14dp"
+        >
+
+        <TextView
+            android:id="@+id/goods_count_decrease"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="#f5f5f5"
+            android:gravity="center"
+            android:text="－"
+            android:layout_marginRight="2dp"/>
+
+        <EditText
+            android:id="@+id/goods_count"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:gravity="center"
+            android:minWidth="28dp"
+            android:imeOptions="actionDone"
+            android:layout_marginRight="2dp"
+            android:background="#f5f5f5"
+            android:inputType="phone"/>
+        <TextView
+            android:id="@+id/goods_count_plus"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:text="＋"
+            android:gravity="center"
+            android:background="#f5f5f5"/>
+    </LinearLayout>
+
+    <include layout="@layout/line"/>
+
+</RelativeLayout>

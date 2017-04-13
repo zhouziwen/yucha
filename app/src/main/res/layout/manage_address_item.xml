@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/address_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/image_selector"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+    >
+
+    <TextView
+        android:id="@+id/manage_address_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="张晓明"
+        android:textColor="@color/price_textColor_pressed"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/manage_address_item_phoneNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="135663326543"
+        />
+
+    <TextView
+        android:id="@+id/manage_address_item_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/manage_address_item_name"
+        android:layout_marginTop="5dp"
+        android:lineSpacingExtra="5dp"
+        android:text="郑州市郑东新区东风南路与康宁街交叉口互联网金融大厦6楼"/>
+
+    <View
+        android:id="@+id/manage_address_item_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/manage_address_item_address"
+        android:layout_marginTop="10dp"
+        android:background="@color/dividerColor"/>
+
+    <LinearLayout
+        android:id="@+id/layout_default"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_below="@id/manage_address_item_line"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp">
+
+        <ImageView
+            android:id="@+id/item_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/circle"/>
+
+        <TextView
+            android:id="@+id/item_select_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingLeft="8dp"
+            android:text="设为默认"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/manage_address_item_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/manage_address_item_line"
+        android:drawableLeft="@mipmap/delete"
+        android:gravity="center"
+        android:text="删除"
+        android:textSize="14dp"/>
+
+    <TextView
+        android:id="@+id/manage_address_item_edit"
+        android:layout_width="50dp"
+        android:layout_height="38dp"
+        android:layout_below="@id/manage_address_item_line"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@id/manage_address_item_delete"
+        android:drawableLeft="@mipmap/edit"
+        android:gravity="center"
+        android:text="编辑"
+        android:textSize="14dp"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,171 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/fragment_bg"
+                tools:context="com.example.hnTea.ui.price.PriceFragment">
+
+
+    <TextView
+        android:id="@+id/state_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/stateColor"
+        android:clipToPadding="true"
+        android:fitsSystemWindows="true"
+        />
+
+    <RelativeLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:layout_below="@+id/state_bar"
+        >
+
+        <RadioGroup
+            android:id="@+id/price_radio_group"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/X_tab"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/price_top_radio_left"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="询价"
+                android:textColor="@drawable/price_draw_text"/>
+
+            <RadioButton
+                android:id="@+id/B_tab"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="-2dp"
+                android:layout_weight="1"
+                android:background="@drawable/price_top_radio_right"
+                android:button="@null"
+                android:gravity="center"
+                android:text="报价"
+                android:textColor="@drawable/price_draw_text"/>
+        </RadioGroup>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/price_utilView"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/root"
+        android:background="@color/line"
+        />
+
+    <LinearLayout
+        android:id="@+id/price_top_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/price_utilView"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+
+        <RelativeLayout
+            android:id="@+id/price_layout_single"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_selecor"
+            >
+
+            <ImageView
+                android:id="@+id/price_image_single"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginRight="20dp"
+                android:layout_toLeftOf="@+id/price_top_single"
+                android:src="@mipmap/price_single_selector"
+                />
+
+            <TextView
+                android:id="@+id/price_top_single"
+                style="@style/price_top_tv"
+                android:layout_centerInParent="true"
+                android:text="@string/price_xun_single"
+                android:textColor="@color/tabBarColor"
+                />
+        </RelativeLayout>
+        <ImageView
+            android:layout_width="0.5dp"
+            android:layout_height="40dp"
+            android:background="@color/line"
+            />
+        <RelativeLayout
+            android:id="@+id/price_layout_proj"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_selecor"
+            >
+
+            <ImageView
+                android:id="@+id/price_image_proj"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginRight="20dp"
+                android:layout_toLeftOf="@+id/price_top_project"
+                android:src="@mipmap/price_proj_nomal"
+                />
+
+            <TextView
+                android:id="@+id/price_top_project"
+                style="@style/price_top_tv"
+                android:layout_centerInParent="true"
+                android:text="@string/price_xun_project"
+                android:textColor="@color/price_textColor_nomal"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/price_utilView1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/price_top_line"
+        android:background="@color/line"
+        />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/float_btn"
+        android:layout_width="49dp"
+        android:layout_height="49dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        app:fabSize="normal"
+        android:layout_margin="30dp"
+        app:backgroundTint="@color/me_price_red_title"
+        android:src="@mipmap/price_search"
+        />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/campus_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/price_utilView1"
+        />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/campus_viewpager1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/price_utilView1"
+        android:visibility="gone"/>
+
+</RelativeLayout>

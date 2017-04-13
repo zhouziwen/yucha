@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="210dp">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:src="@mipmap/me_list_bg"
+        android:scaleType="fitXY"
+        />
+
+    <ImageView
+        android:id="@+id/me_listHeader_icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@mipmap/default_user"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        />
+
+    <TextView
+        android:id="@+id/me_userPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="未登录，点击登录"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/me_listHeader_icon"
+        android:layout_centerHorizontal="true"/>
+
+
+</RelativeLayout>

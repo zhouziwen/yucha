@@ -1,0 +1,137 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/topPadding"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context=".ui.me.MyInquiryFragment">
+
+
+    <TextView
+        android:id="@+id/state_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/stateColor"
+        android:clipToPadding="true"
+        android:fitsSystemWindows="true"
+        />
+
+    <RelativeLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/back_img"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:padding="12dp"
+            android:src="@mipmap/back"
+            android:background="@drawable/btn_selecor"
+            />
+
+        <RadioGroup
+            android:id="@+id/me_inquiry_radio_group"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/product_RB"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/price_top_radio_left"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="产品信息"
+                android:textColor="@drawable/price_draw_text"
+                android:textSize="15sp"/>
+
+            <RadioButton
+                android:id="@+id/project_RB"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="-2dp"
+                android:layout_weight="1"
+                android:background="@drawable/price_top_radio_right"
+                android:button="@null"
+                android:gravity="center"
+                android:text="项目信息"
+                android:textColor="@drawable/price_draw_text"
+                android:textSize="15sp"/>
+        </RadioGroup>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/myInquiry_tab_strip_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="1dp"
+        android:background="@color/white"
+        android:layout_below="@+id/myOrder_utilView"
+        >
+
+        <com.example.hnTea.widget.PagerSlidingTabStrip
+            android:id="@+id/myOrder_sub_tab_strip"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="@color/white"
+            android:textColor="@color/price_textColor_nomal"
+            android:textSize="13sp"
+            app:pstsDividerColor="@android:color/transparent"
+            app:pstsDividerPaddingTopBottom="8dp"
+            app:pstsIndicatorColor="@color/price_viewColor"
+            app:pstsIndicatorHeight="2dp"
+            app:pstsScaleZoomMax="0.1"
+            app:pstsShouldExpand="true"
+            app:pstsSmoothScrollWhenClickTab="true"
+            app:pstsTabPaddingLeftRight="5dp"
+            app:pstsTextSelectedColor="@color/price_textColor_pressed"
+            app:pstsUnderlineColor="@android:color/transparent"
+            app:pstsUnderlineHeight="1dp"/>
+        <com.example.hnTea.widget.PagerSlidingTabStrip
+            android:id="@+id/myOrder_sub_tab_strip1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="@color/white"
+            android:textColor="@color/price_textColor_nomal"
+            android:textSize="13sp"
+            app:pstsDividerColor="@android:color/transparent"
+            app:pstsDividerPaddingTopBottom="8dp"
+            app:pstsIndicatorColor="@color/price_viewColor"
+            app:pstsIndicatorHeight="2dp"
+            app:pstsScaleZoomMax="0.1"
+            app:pstsShouldExpand="true"
+            app:pstsSmoothScrollWhenClickTab="true"
+            app:pstsTabPaddingLeftRight="5dp"
+            app:pstsTextSelectedColor="@color/price_textColor_pressed"
+            app:pstsUnderlineColor="@android:color/transparent"
+            app:pstsUnderlineHeight="1dp"
+            android:visibility="gone"/>
+
+
+    </RelativeLayout>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/me_inquiry_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </android.support.v4.view.ViewPager>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/me_inquiry_viewpager1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+        </android.support.v4.view.ViewPager>
+
+
+
+
+</LinearLayout>

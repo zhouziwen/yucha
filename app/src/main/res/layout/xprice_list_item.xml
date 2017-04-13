@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/XPrice_Layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/image_selector"
+    >
+
+    <TextView
+        android:id="@+id/XPrice_listItem_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:text="【201622223382】显示天然气总公司原来煤气厂变压器改造项目招标"
+        android:textColor="@color/price_textColor_pressed"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/XPrice_listItem_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/XPrice_listItem_title"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="2016-11-11"
+        android:padding="2dp"
+        android:textColor="@color/price_textColor_nomal"
+        />
+
+    <TextView
+        android:id="@+id/XPrice_listItem_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/XPrice_listItem_title"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/XPrice_listItem_time"
+        android:drawableLeft="@mipmap/price_location2"
+        android:text="陕西省"
+        android:ems="4"
+        android:lines="1"
+        android:gravity="center_vertical"
+        android:textColor="@color/price_textColor_nomal"
+        />
+
+    <TextView
+        android:id="@+id/XPrice_listItem_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/XPrice_listItem_title"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/XPrice_listItem_location"
+        android:drawableLeft="@mipmap/price_type2"
+        android:text="建筑"
+        android:gravity="center_vertical"
+        android:textColor="@color/price_textColor_nomal"
+        />
+
+    <TextView
+        android:id="@+id/XPrice_listItem_type1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/XPrice_listItem_title"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/XPrice_listItem_type"
+        android:drawableLeft="@mipmap/price_stage1"
+        android:text="实施阶段"
+        android:maxEms="5"
+        android:lines="1"
+        android:gravity="center_vertical"
+        android:textColor="@color/price_textColor_nomal"
+        />
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/XPrice_listItem_type"
+        />
+</RelativeLayout>

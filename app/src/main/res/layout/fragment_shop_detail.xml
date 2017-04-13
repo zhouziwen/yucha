@@ -1,0 +1,155 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/topPadding"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".ui.home.shop.ShopFragment"
+                android:fitsSystemWindows="true"
+    >
+    <TextView
+        android:id="@+id/state_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/stateColor"
+        android:clipToPadding="true"
+        android:fitsSystemWindows="true"
+        />
+
+    <TextView
+        android:id="@+id/app_title_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/image_selector"
+        android:layout_below="@+id/state_bar"
+        android:drawableLeft="@mipmap/back"
+        android:fitsSystemWindows="true"
+        android:scaleType="center"/>
+
+    <RelativeLayout
+        android:id="@+id/campus_sub_tab_strip_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="4dp"
+        android:layout_below="@+id/state_bar"
+        android:background="@color/white"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:fitsSystemWindows="true"
+        >
+
+        <com.example.hnTea.widget.PagerSlidingTabStrip
+            android:id="@+id/shopDetail_topLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="@color/white"
+            android:textColor="@color/price_textColor_nomal"
+            android:textSize="15sp"
+            app:pstsDividerColor="@android:color/transparent"
+            app:pstsDividerPaddingTopBottom="8dp"
+            app:pstsIndicatorColor="@color/price_viewColor"
+            app:pstsIndicatorHeight="2dp"
+            app:pstsScaleZoomMax="0.1"
+            app:pstsShouldExpand="false"
+            app:pstsSmoothScrollWhenClickTab="false"
+            app:pstsTabPaddingLeftRight="10dp"
+            app:pstsTextSelectedColor="@color/price_textColor_pressed"
+            app:pstsUnderlineColor="@android:color/transparent"
+            app:pstsUnderlineHeight="1dp"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/state_bar"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/campus_sub_tab_strip_layout"
+        >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/shopDetail_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/dividerColor"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_below="@+id/shopDetail_pager"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:elevation="8dp"
+            android:translationZ="20dp"
+            >
+
+            <ImageView
+                android:id="@+id/shop_service"
+                android:layout_width="22dp"
+                android:layout_height="33dp"
+                android:src="@mipmap/shopdetail_service"
+                android:layout_marginTop="13dp"
+                android:background="@drawable/btn_selecor"
+                android:layout_weight="3"
+                android:layout_marginLeft="10dp"
+                />
+
+            <ImageView
+                android:id="@+id/shop_collection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/shopdetail_collect_2"
+                android:layout_marginTop="13dp"
+                android:background="@drawable/btn_selecor"
+                android:layout_weight="3"
+                android:layout_marginRight="10dp"
+                />
+
+            <TextView
+                android:id="@+id/shop_addShop"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/draw_addshop"
+                android:layout_weight="3"
+                android:text="加入购物车"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_marginRight="10dp"
+                android:textSize="15sp"
+                />
+
+            <TextView
+                android:id="@+id/shop_toBuy"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:background="@drawable/addpartner_selector"
+                android:layout_marginTop="7dp"
+                android:layout_weight="4"
+                android:text="立即购买"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_marginRight="10dp"
+                android:textSize="15sp"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

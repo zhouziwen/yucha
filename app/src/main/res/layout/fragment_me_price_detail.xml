@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/topPadding"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.example.hnTea.ui.me.MyInquiry.MePriceDetailFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <com.example.hnTea.widget.AppTitleBar
+        android:id="@+id/app_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/app_title_bar"
+        >
+
+        <com.example.hnTea.ui.custom.CustomListView
+            android:id="@+id/me_price_detail_listView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            android:divider="@color/fragment_bg"
+            android:dividerHeight="0.5dp">
+        </com.example.hnTea.ui.custom.CustomListView>
+    </ScrollView>
+</RelativeLayout>

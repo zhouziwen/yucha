@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:id="@+id/topPadding"
+             tools:context="com.example.hnTea.ui.me.user.UserNameModifyFragment">
+    <com.example.hnTea.widget.AppTitleBar
+        android:id="@+id/app_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/modify_userName_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="点击设置您的昵称"
+        android:maxEms="8"
+        android:minEms="1"
+        android:textSize="15sp"
+        android:layout_below="@id/app_title_bar"
+        android:layout_marginTop="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="@color/white"/>
+
+</RelativeLayout>

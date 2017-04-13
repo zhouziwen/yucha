@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/b_price_single_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/image_selector"
+    >
+
+    <View
+        android:id="@+id/indicator"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAccent"
+        android:layout_centerInParent="true"/>
+    <TextView
+        android:id="@+id/XPrice_listItem_title"
+        style="@style/XPrice_listItem_titleTxt"
+        android:text="【201622223382】GM8系列交流苏克断路器呵呵阿发啊发生萨芬"
+
+        />
+
+    <TextView
+        android:id="@+id/XPrice_listItem_time"
+        style="@style/XPrice_listItem_textBase_style"
+        android:layout_below="@+id/XPrice_listItem_title"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@mipmap/price_brand2"
+        android:text="施耐德"
+        android:maxEms="7"
+        android:lines="1"
+        android:gravity="center_vertical"
+        />
+
+    <TextView
+        android:id="@+id/XPrice_listItem_location"
+        style="@style/XPrice_listItem_textBase_style"
+        android:layout_below="@+id/XPrice_listItem_title"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/indicator"
+        android:drawableLeft="@mipmap/price_amount2"
+        android:text="3000台"
+        android:gravity="center_vertical"
+        />
+
+    <TextView
+        android:id="@+id/XPrice_listItem_type"
+        style="@style/XPrice_listItem_textBase_style"
+        android:layout_below="@+id/XPrice_listItem_location"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@mipmap/price_yibao"
+        android:gravity="center_vertical"
+        android:text="已报：1200次"
+
+        />
+
+    <TextView
+        android:id="@+id/XPrice_listItem_type1"
+        style="@style/XPrice_listItem_textBase_style"
+        android:layout_alignLeft="@+id/XPrice_listItem_location"
+        android:layout_alignStart="@+id/XPrice_listItem_location"
+        android:layout_alignTop="@+id/XPrice_listItem_type"
+        android:drawableLeft="@mipmap/price_tishi"
+        android:gravity="center_vertical"
+        android:text="截止时间：2016-12-14"
+        />
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/XPrice_listItem_type"
+        />
+
+
+</RelativeLayout>

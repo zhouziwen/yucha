@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/myOrder_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+    >
+
+    <TextView
+        android:id="@+id/myOrder_list_item_OrderNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="订单编号208998310213"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        />
+
+    <TextView
+        android:id="@+id/myOrder_list_item_OrderUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="张晓明"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/myOrder_list_item_OrderNum"
+        />
+
+    <TextView
+        android:id="@+id/myOrder_list_item_OrderState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="待付款"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/price_textColor_pressed"
+        android:layout_marginRight="10dp"
+        />
+
+    <ImageView
+        android:id="@+id/myOrder_list_item_utilView"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/myOrder_list_item_OrderState"
+        android:background="@color/dividerColor"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:id="@+id/myOrder_list_item_OrderTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/myOrder_list_item_utilView"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="15sp"
+        android:textColor="@color/price_textColor_pressed"
+        android:text="原产施耐a    ）电源）电源）电源  德（上海）电源开关上海 ABLB8RPSJNLa1aaaaaRIJKS24"
+        />
+    <TextView
+        android:id="@+id/myOrder_list_item_OrderPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/myOrder_list_item_OrderTitle"
+        android:text="￥9800.00"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:textSize="18sp"
+        android:textColor="@color/tipsColor"
+        />
+
+    <TextView
+        android:id="@+id/myOrder_list_item_OrderTYpe"
+        android:layout_width="80dp"
+        android:layout_height="34dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/draw_sms"
+        android:text="确认收货"
+        android:layout_below="@+id/myOrder_list_item_OrderTitle"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/tipsColor"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@+id/myOrder_list_item_OrderTYpe"
+        android:background="@color/white"
+        />
+
+</RelativeLayout>

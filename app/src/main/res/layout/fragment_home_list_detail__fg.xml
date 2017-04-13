@@ -1,0 +1,175 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/topPadding"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.hnTea.ui.home.HomeListDetail_Fg">
+
+
+    <TextView
+        android:id="@+id/state_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/stateColor"
+        android:clipToPadding="true"
+        android:fitsSystemWindows="true"
+        />
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/list_detail_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/tab_Color"
+        app:layout_scrollFlags="scroll|enterAlways"
+        android:layout_below="@+id/state_bar"
+        >
+
+        <TextView
+            android:id="@+id/title_back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/btn_selecor"
+            android:drawableLeft="@mipmap/back"
+            android:scaleType="center"/>
+
+
+        <EditText
+            android:id="@+id/query"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_toRightOf="@+id/title_back"
+            android:background="@drawable/draw_search"
+            android:drawableLeft="@mipmap/home_search"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="搜索产品，询价，报价信息"
+            android:imeOptions="actionSearch"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:singleLine="true"
+            android:textColorHint="#8C8C8C"
+            android:textSize="14sp"
+            />
+
+        <ImageButton
+            android:id="@+id/top_search_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="3dp"
+            android:background="@android:color/transparent"
+            android:padding="6dp"
+            android:src="@mipmap/search_clear"
+            />
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/homeListDetail_view1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/line"
+        android:layout_below="@+id/list_detail_top"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/list_detail_chose"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:layout_below="@+id/homeListDetail_view1"
+        >
+
+        <TextView
+            android:id="@+id/homeListDetail_sale"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/image_selector"
+            android:drawableRight="@mipmap/price_down_normal"
+            android:gravity="center"
+            android:text="产品分类"
+            android:textColor="@color/price_textColor_pressed"
+            android:padding="5dp"
+            android:textSize="12sp"
+            />
+
+        <ImageView
+            android:id="@+id/homeListDetail_view2"
+            android:layout_width="0.5dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/line"
+            android:layout_below="@+id/list_detail_top"
+            />
+
+
+        <TextView
+            android:id="@+id/homeListDetail_price"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/image_selector"
+            android:drawableRight="@mipmap/price_down_normal"
+            android:gravity="center"
+            android:text="销量排序"
+            android:textColor="@color/price_textColor_pressed"
+            android:padding="5dp"
+            android:textSize="12sp"
+            />
+
+        <ImageView
+            android:id="@+id/homeListDetail_view3"
+            android:layout_width="0.5dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/line"
+            android:layout_below="@+id/list_detail_top"
+            />
+
+        <TextView
+            android:id="@+id/homeListDetail_location"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/image_selector"
+            android:drawableRight="@mipmap/price_down_normal"
+            android:gravity="center"
+            android:text="价格排序"
+            android:textColor="@color/price_textColor_pressed"
+            android:padding="5dp"
+            android:textSize="12sp"
+            />
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/homeListDetail_view"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/line"
+        android:layout_below="@+id/list_detail_chose"
+        />
+
+    <ListView
+        android:id="@+id/homeListDetail_ListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@color/line"
+        android:dividerHeight="0.5dp"
+        android:layout_below="@+id/homeListDetail_view"
+        />
+
+</RelativeLayout>

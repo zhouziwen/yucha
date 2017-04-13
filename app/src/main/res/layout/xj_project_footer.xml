@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+              android:paddingTop="5dp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/xj_project_location"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="陕西省西安市"
+            android:gravity="center_vertical"
+            android:drawableLeft="@mipmap/price_location2"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/xj_project_type"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="建筑"
+            android:gravity="center_vertical"
+            android:drawableLeft="@mipmap/price_type2"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/toBPrice"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:text="我要报价"
+        style="@style/costumBtn_redBg_whiteTxt_style"
+        />
+
+</LinearLayout>

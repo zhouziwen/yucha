@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/fragment_bg"/>
+    <TextView
+        android:id="@+id/me_price_detail_footer_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="供应商报价信息"
+        android:drawableLeft="@mipmap/me_price_hongtiao"
+        android:textSize="17sp"
+        android:gravity="center_vertical"
+        android:textColor="@color/me_price_red_title"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="@color/white"
+        android:paddingLeft="12dp"
+        />
+    <com.example.hnTea.ui.custom.CustomListView
+        android:background="@color/white"
+        android:id="@+id/me_price_footer_listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#ffffff">
+
+    </com.example.hnTea.ui.custom.CustomListView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/fragment_bg"/>
+
+</LinearLayout>

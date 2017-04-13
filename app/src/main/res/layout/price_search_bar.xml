@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/price_search_topLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+    >
+
+    <TextView
+        android:id="@+id/title_back"
+        android:layout_width="40dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/btn_selecor"
+        android:drawableLeft="@mipmap/back"
+        android:scaleType="center"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:layout_toRightOf="@+id/title_back"
+        android:background="@drawable/draw_search_price"
+        >
+
+        <ImageButton
+            android:id="@+id/top_search_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_selecor"
+            android:padding="6dp"
+            android:src="@mipmap/search_to_bottom"
+            />
+
+
+        <EditText
+            android:id="@+id/query"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="左侧选择您要搜索的分类..."
+            android:singleLine="true"
+            android:imeOptions="actionSearch"
+            android:textColorHint="#8C8C8C"
+            android:textSize="14sp"
+            android:background="@null"
+            android:layout_toRightOf="@+id/top_search_to"
+            android:layout_marginLeft="5dp"
+            />
+
+        <ImageButton
+            android:id="@+id/top_search_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_selecor"
+            android:padding="6dp"
+            android:src="@mipmap/search_clear"
+            android:layout_marginRight="5dp"
+            />
+
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

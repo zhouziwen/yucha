@@ -1,0 +1,320 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/topPadding"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.example.hnTea.ui.price.PriceDetailFragment"
+    >
+
+    <com.example.hnTea.widget.AppTitleBar
+        android:id="@+id/app_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/price_listItem_Detail_LLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/app_title_bar"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        >
+
+        <TextView
+            android:id="@+id/price_listItem_Detail_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:lineSpacingExtra="5dp"
+            android:text="扫地那佛那是的覅ONSDOI烦恼都是佛is等你哦fin山东if你说的是的范德萨发生的"
+            android:textColor="@color/price_textColor_pressed"
+            android:textSize="18sp"
+            />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/price_listItem_Detail_RLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/price_listItem_Detail_LLayout"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        >
+
+        <TextView
+            android:id="@+id/price_listItem_Detail_util"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="基本信息"
+            android:textColor="@color/price_viewColor"
+            android:textSize="18sp"
+            />
+
+        <TextView
+            android:id="@+id/price_listItem_Detail_util1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price_listItem_Detail_util"
+            android:layout_marginLeft="15dp"
+            android:text="项目单号："
+            android:textColor="@color/price_textColor_nomal"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:id="@+id/price_listItem_Detail_util2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price_listItem_Detail_util1"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="项目阶段："
+            android:textColor="@color/price_textColor_nomal"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:id="@+id/price_listItem_Detail_util3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price_listItem_Detail_util2"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="报价截止时间："
+            android:textColor="@color/price_textColor_nomal"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:id="@+id/price_listItem_Detail_util4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price_listItem_Detail_util3"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="质保期："
+            android:textColor="@color/price_textColor_nomal"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:id="@+id/price_listItem_Detail_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price_listItem_Detail_util"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/price_listItem_Detail_util1"
+            android:text="20898219321"
+            android:textColor="@color/price_textColor_pressed"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:id="@+id/price_listItem_Detail_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price_listItem_Detail_number"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/price_listItem_Detail_util2"
+            android:text="中标后"
+            android:textColor="@color/price_textColor_pressed"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:id="@+id/price_listItem_Detail_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price_listItem_Detail_type"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/price_listItem_Detail_util3"
+            android:text="2016-11-11"
+            android:textColor="@color/price_textColor_pressed"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:id="@+id/price_listItem_Detail_DetailTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price_listItem_Detail_time"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/price_listItem_Detail_util4"
+            android:text="12个月"
+            android:textColor="@color/price_textColor_pressed"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:id="@+id/price_listItem_Detail_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price_listItem_Detail_util4"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@mipmap/price_location"
+            android:text="陕西省下那是经济开发区"
+            android:textColor="@color/price_textColor_nomal"
+            />
+
+        <TextView
+            android:id="@+id/price_listItem_Detail_DetailType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price_listItem_Detail_DetailTime"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/price_listItem_Detail_location"
+            android:drawableLeft="@mipmap/price_type"
+            android:text="建筑"
+            android:textColor="@color/price_textColor_nomal"
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/price_listItem_Detail_RLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/price_listItem_Detail_RLayout"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        >
+
+        <TextView
+            android:id="@+id/price_listItem_Detail_util11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="收货信息"
+            android:textColor="@color/price_viewColor"
+            android:textSize="18sp"
+            />
+
+        <TextView
+            android:id="@+id/price_listItem_Detail_util111"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price_listItem_Detail_util11"
+            android:layout_marginLeft="15dp"
+            android:text="收货人："
+            android:textColor="@color/price_textColor_nomal"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:id="@+id/price_listItem_Detail_util211"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price_listItem_Detail_util111"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="联系方式："
+            android:textColor="@color/price_textColor_nomal"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:id="@+id/price_listItem_Detail_util311"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price_listItem_Detail_util211"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="收货周期："
+            android:textColor="@color/price_textColor_nomal"
+            android:textSize="15sp"
+            />
+
+
+        <TextView
+            android:id="@+id/price_listItem_Detail_number11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price_listItem_Detail_util11"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/price_listItem_Detail_util111"
+            android:text="张三"
+            android:textColor="@color/price_textColor_pressed"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:id="@+id/price_listItem_Detail_type11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price_listItem_Detail_number11"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/price_listItem_Detail_util211"
+            android:text="15869003982"
+            android:textColor="@color/price_textColor_pressed"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:id="@+id/price_listItem_Detail_time11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price_listItem_Detail_type11"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/price_listItem_Detail_util311"
+            android:text="5个工作日"
+            android:textColor="@color/price_textColor_pressed"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:id="@+id/price_listItem_Detail_location11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price_listItem_Detail_util311"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="备注：含税，含运费"
+            android:textColor="@color/price_textColor_nomal"
+            />
+
+        <TextView
+            android:id="@+id/price_listItem_Detail_DetailType11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price_listItem_Detail_util311"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/price_listItem_Detail_location11"
+            android:text="补充说明："
+            android:textColor="@color/price_textColor_nomal"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/price_listItem_Detail_RLayout1"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="温馨提示:移动端暂无法报价，请登录PC端进行报价。"
+        android:textColor="@color/price_textColor_nomal"
+        />
+
+
+</RelativeLayout>

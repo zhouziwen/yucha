@@ -1,0 +1,119 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/topPadding"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context="com.example.hnTea.ui.price.SearchPriceFragment">
+
+    <TextView
+        android:id="@+id/state_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/stateColor"
+        android:clipToPadding="true"
+        android:fitsSystemWindows="true"
+        />
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/price_search_topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/state_bar"
+        android:background="@color/white"
+        >
+
+        <TextView
+            android:id="@+id/title_back"
+            android:layout_width="40dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/btn_selecor"
+            android:drawableLeft="@mipmap/back"
+            android:scaleType="center"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@+id/title_back"
+            android:background="@drawable/draw_search_price"
+            >
+
+            <ImageButton
+                android:id="@+id/top_search_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/btn_selecor"
+                android:padding="6dp"
+                android:src="@mipmap/search_to_bottom"
+                />
+
+
+            <EditText
+                android:id="@+id/query"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/top_search_to"
+                android:background="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:hint="左侧选择您要搜索的分类..."
+                android:imeOptions="actionSearch"
+                android:singleLine="true"
+                android:textColorHint="#8C8C8C"
+                android:textSize="14sp"
+                />
+
+            <ImageButton
+                android:id="@+id/top_search_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/btn_selecor"
+                android:padding="6dp"
+                android:src="@mipmap/search_clear"
+                />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/search_price_utilView"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/price_search_topLayout"
+        android:background="@color/line"
+        />
+
+    <ListView
+        android:id="@+id/X_Single_listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/search_price_utilView"
+        />
+
+    <ListView
+        android:id="@+id/X_Project_listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/search_price_utilView"
+        />
+
+    <ListView
+        android:id="@+id/B_Single_listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/search_price_utilView"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/me_list_layout"
+                android:background="@drawable/image_selector"
+                android:orientation="vertical"
+    >
+
+    <ImageView
+        android:id="@+id/me_list_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@mipmap/me_listitem1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        />
+
+
+    <TextView
+        android:id="@+id/me_list_title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="60dp"
+        android:drawableRight="@mipmap/home_more"
+        android:gravity="center|left"
+        android:paddingRight="10dp"
+        android:text="PPR水管"
+        />
+
+    <ImageView
+        android:id="@+id/me_list_utilView"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/me_list_title"
+        android:layout_marginLeft="14dp"
+        android:background="@color/dividerColor"
+        />
+
+    <ImageView
+        android:id="@+id/me_list_utilView2"
+        android:layout_width="match_parent"
+        android:layout_height="14dp"
+        android:layout_below="@+id/me_list_utilView"
+        android:background="@color/dividerColor"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+    >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/line"
+        />
+
+    <ImageView
+        android:id="@+id/historyLine_selectorView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:src="@mipmap/buy_nomal"
+        />
+
+    <TextView
+        android:id="@+id/historyLine_selectorTv"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/historyLine_selectorView"
+        android:gravity="center"
+        android:text="全选"
+        android:textColor="@color/price_textColor_pressed"
+        />
+
+
+    <TextView
+            android:id="@+id/historyLine_delete"
+        android:layout_width="120dp"
+        android:layout_height="46dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/addpartner_selector"
+        android:gravity="center"
+        android:text="删除"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        />
+
+</RelativeLayout>

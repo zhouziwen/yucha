@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/home_list_item_header"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/home_hlist_item1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
+
+
+    <com.example.hnTea.ui.custom.CustomGridView
+        android:id="@+id/home_list_gridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/home_list_item_header"
+        android:numColumns="2"
+        android:background="@color/white"
+        />
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/home_list_item_line"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_below="@+id/home_list_item_header"-->
+        <!--&gt;-->
+        <!--<com.example.dlidian.ui.custom.CustomListView-->
+            <!--android:id="@+id/home_list_item_leftList"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@color/white"-->
+            <!--/>-->
+        <!--<ImageView-->
+            <!--android:layout_width="0.5dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@color/line"-->
+            <!--/>-->
+        <!--<com.example.dlidian.ui.custom.CustomListView-->
+            <!--android:id="@+id/home_list_item_RightList"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@color/white"-->
+            <!--/>-->
+
+    <!--</LinearLayout>-->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/home_list_item_utilView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0.5dp"-->
+        <!--android:background="@color/line"-->
+        <!--android:layout_below="@+id/home_list_gridView"-->
+        <!--/>-->
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/dividerColor"
+        android:layout_below="@+id/home_list_gridView"
+        />
+
+</RelativeLayout>

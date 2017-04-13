@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/fragment_bg"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="产品参数"
+        android:textColor="@color/price_textColor_pressed"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="23dp"
+        />
+    <com.example.hnTea.ui.custom.CustomListView
+        android:background="@color/white"
+        android:id="@+id/XP_CS_listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#ffffff">
+
+    </com.example.hnTea.ui.custom.CustomListView>
+
+    <TextView
+        android:id="@+id/toBPrice"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:text="我要报价"
+        style="@style/costumBtn_redBg_whiteTxt_style"
+        />
+
+</LinearLayout>

@@ -1,0 +1,18 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/topPadding"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@mipmap/me_list_bg"
+                tools:context="com.example.hnTea.ui.me.MeFragment"
+    >
+
+    <ListView
+        android:id="@+id/me_listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/fragment_bg"
+        android:divider="@null"
+        />
+
+</RelativeLayout>

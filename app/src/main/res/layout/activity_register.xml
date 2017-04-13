@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/login_bg_1"
+    tools:context=".ui.login.RegisterActivity">
+
+
+    <TextView
+        android:id="@+id/register_top"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="注册"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:drawableLeft="@mipmap/login_back"
+        android:fitsSystemWindows="true"
+        android:textSize="18sp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="192dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="47dp"
+        android:layout_marginRight="47dp"
+        android:background="@drawable/login_edtext"
+        android:id="@+id/relativeLayout">
+
+        <EditText
+            android:id="@+id/register_userName"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@null"
+            android:hint="手机号"
+            android:textSize="14sp"
+            android:drawableLeft="@mipmap/register_username"
+            android:drawablePadding="10dp"
+            android:layout_marginLeft="14dp"
+            android:inputType="phone"
+            />
+
+        <View
+            android:id="@+id/login_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="14dp"
+            android:background="@color/dividerColor"
+            android:layout_below="@+id/register_userName"
+            android:layout_marginRight="14dp"
+            />
+
+        <EditText
+            android:id="@+id/register_sms"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@+id/login_line"
+            android:background="@null"
+            android:hint="验证码"
+            android:drawablePadding="10dp"
+            android:textSize="14sp"
+            android:drawableLeft="@mipmap/login_sms"
+            android:layout_marginLeft="14dp"
+            android:inputType="phone"
+            />
+
+        <TextView
+            android:id="@+id/register_getSms"
+            android:layout_width="80dp"
+            android:layout_height="34dp"
+            android:background="@drawable/draw_sms"
+            android:gravity="center"
+            android:text="获取"
+            android:layout_marginBottom="7dp"
+            android:layout_alignBottom="@+id/register_sms"
+            android:layout_alignRight="@+id/login_line1"
+            android:textColor="@color/shopColor"
+            />
+
+        <View
+            android:id="@+id/login_line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="14dp"
+            android:background="@color/dividerColor"
+            android:layout_below="@+id/register_sms"
+            android:layout_marginRight="14dp"
+            />
+
+        <EditText
+            android:id="@+id/login_psw"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@+id/login_line1"
+            android:background="@null"
+            android:hint="密码"
+            android:drawablePadding="10dp"
+            android:textSize="14sp"
+            android:drawableLeft="@mipmap/login_psw_up"
+            android:layout_marginLeft="14dp"
+            android:inputType="textPassword"
+            />
+
+        <View
+            android:id="@+id/login_line2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="14dp"
+            android:background="@color/dividerColor"
+            android:layout_below="@+id/login_psw"
+            android:layout_marginRight="14dp"
+
+
+            />
+
+        <EditText
+            android:id="@+id/login_psw_right"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@+id/login_line2"
+            android:background="@null"
+            android:hint="确认密码"
+            android:drawablePadding="10dp"
+            android:textSize="14sp"
+            android:drawableLeft="@mipmap/register_psw"
+            android:layout_marginLeft="14dp"
+            android:inputType="textPassword"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/register_userConfig"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="47dp"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:id="@+id/register_img_userConfig"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/register_user_config_selector"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我已同意"
+            />
+
+        <TextView
+            android:id="@+id/register_tv_userConfig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="《电力电用户协议》"
+            android:textColor="@color/or_red"
+            android:layout_marginLeft="5dp"
+            />
+
+    </LinearLayout>
+
+
+
+
+    <TextView
+        android:id="@+id/login_loginTv"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:text="注  册"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_marginTop="77dp"
+        android:background="@drawable/addpartner_selector"
+        android:gravity="center"
+        android:layout_marginLeft="47dp"
+        android:layout_marginRight="47dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:elevation="8dp"
+        />
+
+</RelativeLayout>

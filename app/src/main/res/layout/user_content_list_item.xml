@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/userContent_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/image_selector"
+    >
+
+
+    <TextView
+        android:id="@+id/userContent_title"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center|left"
+        android:text="PPR水管"
+        android:textColor="@color/price_textColor_pressed"
+        />
+
+    <TextView
+        android:id="@+id/userContent_var"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="100dp"
+        android:lines="1"
+        android:layout_marginRight="10dp"
+        android:drawableRight="@mipmap/home_more"
+        android:gravity="center"
+        android:text="PPR水管aa"
+        android:textSize="13sp"
+        />
+
+    <ImageView
+        android:id="@+id/userInfo_utilView"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/userInfo_list_title"
+        android:layout_marginLeft="14dp"
+        android:background="@color/dividerColor"
+        />
+
+
+</RelativeLayout>

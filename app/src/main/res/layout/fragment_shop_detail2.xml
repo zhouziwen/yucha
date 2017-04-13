@@ -1,0 +1,248 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/dividerColor"
+                tools:context=".ui.home.shop.ShopDetailFragment">
+
+    <WebView
+        android:id="@+id/shopDetail_webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/home_detail_Layout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_marginLeft="15dp"-->
+        <!--android:layout_marginRight="15dp"-->
+        <!--android:layout_marginTop="24dp"-->
+        <!--android:background="@color/white"-->
+        <!--&gt;-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_marginLeft="14dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="品牌"-->
+            <!--android:textColor="@color/price_textColor_pressed"-->
+            <!--android:textSize="16sp"-->
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_marginRight="14dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="施耐德"-->
+            <!--android:textSize="16sp"-->
+            <!--/>-->
+    <!--</RelativeLayout>-->
+
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/home_detail_Layout1"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_below="@+id/home_detail_Layout"-->
+        <!--android:layout_marginLeft="15dp"-->
+        <!--android:layout_marginRight="15dp"-->
+        <!--&gt;-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_marginLeft="14dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="供应商"-->
+            <!--android:textColor="@color/price_textColor_pressed"-->
+            <!--android:textSize="16sp"-->
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_marginRight="14dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="太能电气"-->
+            <!--android:textSize="16sp"-->
+            <!--/>-->
+    <!--</RelativeLayout>-->
+
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/home_detail_Layout2"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_below="@+id/home_detail_Layout1"-->
+        <!--android:layout_marginLeft="15dp"-->
+        <!--android:layout_marginRight="15dp"-->
+        <!--android:background="@color/white"-->
+        <!--&gt;-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_marginLeft="14dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="型号"-->
+            <!--android:textColor="@color/price_textColor_pressed"-->
+            <!--android:textSize="16sp"-->
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_marginRight="14dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="TnSine-39a-oa"-->
+            <!--android:textSize="16sp"-->
+            <!--/>-->
+    <!--</RelativeLayout>-->
+
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/home_detail_Layout3"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_below="@+id/home_detail_Layout2"-->
+        <!--android:layout_marginLeft="15dp"-->
+        <!--android:layout_marginRight="15dp"-->
+        <!--&gt;-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_marginLeft="14dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="商品产地"-->
+            <!--android:textColor="@color/price_textColor_pressed"-->
+            <!--android:textSize="16sp"-->
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_marginRight="14dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="中国大陆"-->
+            <!--android:textSize="16sp"-->
+            <!--/>-->
+    <!--</RelativeLayout>-->
+
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/home_detail_Layout4"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/home_detail_Layout3"-->
+        <!--android:layout_marginLeft="15dp"-->
+        <!--android:layout_marginRight="15dp"-->
+        <!--android:background="@color/white"-->
+        <!--&gt;-->
+        <!--<TextView-->
+            <!--android:id="@+id/home_detail_tx"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_marginLeft="14dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="规格参数"-->
+            <!--android:textColor="@color/price_textColor_pressed"-->
+            <!--android:textSize="16sp"-->
+            <!--/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/home_detail_tx1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:layout_below="@+id/home_detail_tx"-->
+            <!--android:layout_marginRight="14dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="外形尺寸"-->
+            <!--android:layout_marginLeft="14dp"-->
+            <!--android:textColor="@color/price_textColor_pressed"-->
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:id="@+id/home_detail_tx2"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:layout_below="@+id/home_detail_tx"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_marginRight="14dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="1024*982"-->
+            <!--/>-->
+
+
+        <!--<TextView-->
+            <!--android:id="@+id/home_detail_tx3"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:layout_below="@+id/home_detail_tx1"-->
+            <!--android:layout_marginRight="14dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="安装方式"-->
+            <!--android:layout_marginLeft="14dp"-->
+            <!--android:textColor="@color/price_textColor_pressed"-->
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:id="@+id/home_detail_tx4"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:layout_below="@+id/home_detail_tx2"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_marginRight="14dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="并机模块化系列"-->
+            <!--/>-->
+
+
+
+        <!--<TextView-->
+            <!--android:id="@+id/home_detail_tx5"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:layout_below="@+id/home_detail_tx3"-->
+            <!--android:layout_marginRight="14dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="系统应用"-->
+            <!--android:layout_marginLeft="14dp"-->
+            <!--android:textColor="@color/price_textColor_pressed"-->
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:id="@+id/home_detail_tx6"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:layout_below="@+id/home_detail_tx4"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_marginRight="14dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="三相四线"-->
+            <!--/>-->
+
+
+        <!--<TextView-->
+            <!--android:id="@+id/home_detail_tx7"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:layout_below="@+id/home_detail_tx5"-->
+            <!--android:layout_marginRight="14dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="补偿容量"-->
+            <!--android:layout_marginLeft="14dp"-->
+            <!--android:textColor="@color/price_textColor_pressed"-->
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:id="@+id/home_detail_tx8"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:layout_below="@+id/home_detail_tx6"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_marginRight="14dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="40A"-->
+            <!--/>-->
+
+
+    <!--</RelativeLayout>-->
+
+
+</RelativeLayout>
