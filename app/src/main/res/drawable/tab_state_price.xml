@@ -2,7 +2,7 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:state_checked="true"
-        android:drawable="@mipmap/tab_price_pressed"/>
-    <item android:drawable="@mipmap/tab_price_normal"/>
+        android:drawable="@drawable/ic_tab_xunbaojia_pressed"/>
+    <item android:drawable="@drawable/ic_tab_xunbaojia_normal"/>
 
 </selector>

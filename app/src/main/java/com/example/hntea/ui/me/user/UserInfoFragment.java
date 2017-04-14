@@ -95,10 +95,10 @@ public class UserInfoFragment extends BaseFragment {
 //            }
 //        });
 //        mVoiceSwitch.setChecked(PreManager.instance().getBool("pushVoice"));
-//        mVoiceSwitch.setOnCheckedChangeListener((buttonView, isChecked) ->{
-//            if (isChecked) {
-//                JPushInterface.setSilenceTime(MyApplication.getContext(), 22, 30, 8, 30);
-//                PreManager.instance().saveBool("pushVoice",true);
+//                JPushInterface.setSilenceTime(MyApplication.getCon, 30, 8, 30);
+//                PreManager.instance().saveBool("pushVoi
+//        mVoiceSwitch.setOnCheckedChangeListener((buttonView, isChecked) ->{text(), 22
+//            if (isChecked) {ce",true);
 //                ApToast.showBottom("22：30—8：30为静音时段");
 //            } else {
 //                PreManager.instance().saveBool("pushVoice",false);

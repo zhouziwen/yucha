@@ -284,7 +284,7 @@ public class UserContentFragment extends BaseFragment {
             // saveServer();保存到服务器；
             // saveSD();保存到sd卡;
             // 显示在界面中；
-            BitmapUtils.saveToSDBitmap(getActivity(), "icon.png",
+            BitmapUtils.saveToSDBitmap(getActivity(), "yciconon.png",
                     photo_round);
             mHeadIcon.setImageBitmap(photo_round);
             //给前一个界面发一个通知

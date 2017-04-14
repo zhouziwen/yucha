@@ -7,7 +7,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="190dp"
-        android:src="@mipmap/me_list_bg"
+        android:src="@mipmap/bg_user"
         android:scaleType="fitXY"
         />
 

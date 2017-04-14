@@ -4,6 +4,6 @@
     <item android:state_pressed="true" android:color="@color/white"/>
     <item android:state_checked="true" android:color="@color/white"/>
     <item android:state_selected="true" android:color="@color/white"/>
-    <item android:color="@color/tabBarColor"/>
+    <item android:color="@color/ycMainColor"/>
 
 </selector>

@@ -90,7 +90,7 @@ public class WebNewsFragment extends BaseFragment {
                         UMShareUtils shareUtils =
                                 new UMShareUtils(getActivity(),
                                         getContext(),
-                                        R.mipmap.icon,
+                                        R.mipmap.ycicon,
                                         mData.getShare_url(),
                                         mData.getTitle(),
                                         mData.getShare_content());

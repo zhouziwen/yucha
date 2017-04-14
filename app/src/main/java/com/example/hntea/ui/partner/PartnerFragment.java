@@ -51,7 +51,6 @@ public class PartnerFragment extends BaseFragment {
     private PartnerNewsAdapter mAdapter;
 
     private SearchPriceFragment mSearchPriceFragment;
-    private HomeSearchFragment mHomeSearchFragment;
     private TextView queryTv, mStateBar;
     private ViewPager mViewPager;
     private LinearLayout mLinearLayout;
@@ -92,6 +91,8 @@ public class PartnerFragment extends BaseFragment {
     @Override
     protected void initView(View view) {
         super.initView(view);
+        mAppTitleBar.getBack().setVisibility(View.GONE);
+        mAppTitleBar.setTitle("合伙人");
         mWebNewsFragment = new WebNewsFragment();
         mPartnerPresenter = new PartnerPresenter(null);
         mBannerWebNewsFragment = new BannerWebNewsFragment();
@@ -102,10 +103,6 @@ public class PartnerFragment extends BaseFragment {
     @Override
     protected void setListener() {
         super.setListener();
-        queryTv.setOnClickListener(v -> {
-            //顶部跳转搜索页面
-            pushSearchDetail();
-        });
 //        mRecyclerView.setRefreshProgressStyle(ProgressStyle.BallSpinFadeLoader);
         //下拉刷新
         mRecyclerView.setOnRefreshListener(() -> setRecyclerViewData(1));

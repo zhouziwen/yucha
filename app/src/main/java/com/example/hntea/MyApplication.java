@@ -126,7 +126,7 @@ public class MyApplication extends Application {
 
     public Bitmap getUserLocalHeader() {
         File file = getExternalFilesDir("/photo");
-        String url = file + "/icon.png";
+        String url = file + "/ycicon.pngng";
         Bitmap b = BitmapFactory.decodeFile(url);
         return b;
     }

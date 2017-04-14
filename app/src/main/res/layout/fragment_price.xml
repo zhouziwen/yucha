@@ -70,9 +70,10 @@
         android:id="@+id/price_top_line"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/price_utilView"
         android:background="@color/white"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_below="@+id/root"
+        android:layout_toEndOf="@+id/campus_viewpager1">
 
 
         <RelativeLayout
@@ -150,7 +151,7 @@
         android:layout_alignParentBottom="true"
         app:fabSize="normal"
         android:layout_margin="30dp"
-        app:backgroundTint="@color/me_price_red_title"
+        app:backgroundTint="@color/ycMainColor"
         android:src="@mipmap/price_search"
         />
 

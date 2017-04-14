@@ -19,6 +19,7 @@ import android.view.WindowManager;
 import android.webkit.MimeTypeMap;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+
 import com.android.volley.VolleyError;
 import com.example.hnTea.R;
 import com.example.hnTea.manager.PreManager;
@@ -65,10 +66,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mTabPartner = (RadioButton) findViewById(R.id.main_tab_partner);
         mTabMe = (RadioButton) findViewById(R.id.main_tab_mine);
         mTabCenter = (ImageView) findViewById(R.id.main_tab_center);
-        //mHomeFragment = new HomeFragment();
-        mPartnerFragment = new PartnerFragment();
+        mHomeFragment = new HomeFragment();
+//        mPartnerFragment = new PartnerFragment();
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
-        transaction.add(R.id.container, mPartnerFragment);
+        transaction.add(R.id.container, mHomeFragment);
         transaction.commit();
     }
 
@@ -95,12 +96,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
     private void hideAllFragment(FragmentTransaction transaction) {
-        transaction.hide(mPartnerFragment);
+        transaction.hide(mHomeFragment);
         if (mPriceFragment != null) {
             transaction.hide(mPriceFragment);
         }
-        if (mHomeFragment != null) {
-            transaction.hide(mHomeFragment);
+        if (mPartnerFragment != null) {
+            transaction.hide(mPartnerFragment);
         }
         if (mMeFragment != null) {
             transaction.hide(mMeFragment);
@@ -122,9 +123,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
         hideAllFragment(transaction);
         switch (v.getId()) {
-            case R.id.main_tab_home:
-                transaction.show(mPartnerFragment);
-                mTabHome.setChecked(true);
+            case R.id.main_tab_partner:
+                if (mPartnerFragment == null) {
+                    mPartnerFragment = new PartnerFragment();
+                    transaction.add(R.id.container, mPartnerFragment);
+                } else {
+                    transaction.show(mPartnerFragment);
+                }
+                mTabPartner.setChecked(true);
                 break;
             case R.id.main_tab_price:
                 if (mPriceFragment == null) {
@@ -135,14 +141,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 }
                 mTabPrice.setChecked(true);
                 break;
-            case R.id.main_tab_partner:
-                if (mHomeFragment == null) {
-                    mHomeFragment = new HomeFragment();
-                    transaction.add(R.id.container, mHomeFragment);
-                } else {
-                    transaction.show(mHomeFragment);
-                }
-                mTabPartner.setChecked(true);
+            case R.id.main_tab_home:
+                transaction.show(mHomeFragment);
+                mTabHome.setChecked(true);
                 break;
             case R.id.main_tab_mine:
                 if (mMeFragment == null) {
@@ -229,7 +230,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             @Override
             public void onPhpFail(String var) {
                 //没有新版本
-               // showAlertWithMsg("您使用的是最新版");
+                // showAlertWithMsg("您使用的是最新版");
             }
 
             @Override

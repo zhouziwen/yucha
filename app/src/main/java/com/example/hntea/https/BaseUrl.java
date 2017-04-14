@@ -11,6 +11,7 @@ public class BaseUrl {
     //返回服务器baseUrl
     public static String getBaseUrl() {
         return "https://www.dianlidian.com/api.php";
+//        return "http://www.51yucha.com/api.php";
     }
 
     public static String getBaseUrlNoEnd(){

@@ -293,7 +293,7 @@ public class MeFragment extends BaseFragment {
                         //软件分享
                         UMShareUtils shareUtils = new UMShareUtils(getActivity(),
                                 getContext(),
-                                R.mipmap.icon,
+                                R.mipmap.ycicon,
                                 BaseUrl.getUMShareApUrl(),
                                 "电力电APP下载",
                                 "电力电 - 电器行业询价交易平台，为您提供一站式采购服务。") {

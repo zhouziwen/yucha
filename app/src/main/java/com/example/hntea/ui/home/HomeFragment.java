@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.android.volley.VolleyError;
 import com.example.hnTea.apcontains.FragmentTags;
@@ -22,6 +23,7 @@ import com.example.hnTea.ui.home.adapter.HomeAdapter;
 import com.example.hnTea.ui.home.shop.BusinessYellowPagesFragment;
 import com.example.hnTea.ui.home.shop.ShopFragment;
 import com.example.hnTea.ui.home.shop.ShoppingFragment;
+import com.example.hnTea.ui.price.SearchPriceFragment;
 import com.example.hnTea.utils.ShowFragmentUtils;
 import com.example.hnTea.utils.toast.ApToast;
 import com.github.jdsjlzx.recyclerview.LRecyclerView;
@@ -36,12 +38,13 @@ public class HomeFragment extends BaseFragment {
     private LRecyclerView mRecyclerView;
     private LRecyclerViewAdapter mLRecyclerViewAdapter;
     private HomeAdapter mAdapter;
-    private ShoppingFragment mShoppingFragment;
+    private SearchPriceFragment mSearchPriceFragment;
     private HomeListDetail_Fg homeListDetail_fg;
     private BusinessYellowPagesFragment mBusinessYellowPagesFragment;
     private List<MainShop_Category> mMainShop_categories;
     private List<MainShop_ShangJia> mMainShop_shangJias;
     private ShopFragment mShopFragment;
+    private TextView queryTv, mStateBar;
 
     @Override
     public void onResume() {
@@ -59,10 +62,7 @@ public class HomeFragment extends BaseFragment {
     protected void initView(View view) {
         super.initView(view);
         mHomePresenter = new HomePresenter(null);
-        mAppTitleBar.getBack().setVisibility(View.GONE);
-        mAppTitleBar.setTitle("电气城");
-        mAppTitleBar.getAction().setVisibility(View.VISIBLE);
-        setTvDrawable(mAppTitleBar.getAction(), R.mipmap.shop_shopping_cart);
+        queryTv = mFindViewUtils.findViewById(R.id.query);
         mRecyclerView = mFindViewUtils.findViewById(R.id.home_listView);
         String var = "";
         for (int i = var.length(); i < var.length(); i--) {
@@ -73,15 +73,9 @@ public class HomeFragment extends BaseFragment {
     @Override
     protected void setListener() {
         super.setListener();
-        mAppTitleBar.getAction().setOnClickListener(v -> {
-            //跳转购物车
-            if (mShoppingFragment == null) {
-                mShoppingFragment = new ShoppingFragment();
-            }
-            ShowFragmentUtils.showFragment(getActivity(),
-                    mShoppingFragment.getClass(),
-                    FragmentTags.FRAGMENT_SHOPPING,
-                    null, true);
+        queryTv.setOnClickListener(v -> {
+            //顶部跳转搜索页面
+            pushSearchDetail();
         });
         mRecyclerView.setOnRefreshListener(this::request);
     }
@@ -217,5 +211,21 @@ public class HomeFragment extends BaseFragment {
                     FragmentTags.FRAGMENT_HOME_LIST_DETAIL,
                     bundle, true);
         }
+    }
+    private void pushSearchDetail() {
+//        if (mHomeSearchFragment == null) {
+//            mHomeSearchFragment = new HomeSearchFragment();
+//        }
+//        ShowFragmentUtils.showFragment(getActivity(),
+//                mHomeSearchFragment.getClass(),
+//                FragmentTags.FRAGMENT_HOME_SEARCH,
+//                null, true);
+        if (mSearchPriceFragment == null) {
+            mSearchPriceFragment = new SearchPriceFragment();
+        }
+        ShowFragmentUtils.showFragment(getActivity(),
+                mSearchPriceFragment.getClass(),
+                "searchPrice",
+                null, true);
     }
 }

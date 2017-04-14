@@ -2,8 +2,8 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:state_checked="true"
-        android:drawable="@mipmap/home_pressed3"/>
-    <item android:drawable="@mipmap/home_nomal3"/>
+        android:drawable="@drawable/ic_tab_home_pressed"/>
+    <item android:drawable="@drawable/ic_tab_home_normal"/>
 
 
 </selector>

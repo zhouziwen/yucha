@@ -42,7 +42,7 @@
             android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:background="@drawable/tabimage_selectot"
-            android:src="@mipmap/tab_center1"
+            android:src="@drawable/ic_tab_add_noamal"
             />
 
         <!--<android.support.design.widget.FloatingActionButton-->

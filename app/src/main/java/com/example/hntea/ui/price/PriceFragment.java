@@ -174,13 +174,13 @@ public class PriceFragment extends BaseFragment implements ViewPager.OnPageChang
 
     private void changeTextColor(int position) {
         if (position == 1) {
-            mProjectText.setTextColor(getResources().getColor(R.color.tabBarColor));
+            mProjectText.setTextColor(getResources().getColor(R.color.ycMainColor));
             mSingleText.setTextColor(getResources().getColor(R.color.price_textColor_nomal));
             mImage_Project.setImageResource(R.mipmap.price_proj_selector);
             mImage_Single.setImageResource(R.mipmap.price_single_nomal);
         } else {
             mProjectText.setTextColor(getResources().getColor(R.color.price_textColor_nomal));
-            mSingleText.setTextColor(getResources().getColor(R.color.tabBarColor));
+            mSingleText.setTextColor(getResources().getColor(R.color.ycMainColor));
             mImage_Project.setImageResource(R.mipmap.price_proj_nomal);
             mImage_Single.setImageResource(R.mipmap.price_single_selector);
         }
