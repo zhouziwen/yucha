@@ -81,17 +81,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mTabPartner.setOnClickListener(this);
         mTabMe.setOnClickListener(this);
         //tab下面的红枣
-        mTabCenter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mPopFragment == null) {
-                    mPopFragment = new PopFragment();
-                }
-                FragmentTransaction transaction = mFragmentManager.beginTransaction();
-                transaction.add(android.R.id.content, mPopFragment);
-                transaction.addToBackStack("pop");
-                transaction.commit();
+        mTabCenter.setOnClickListener(v -> {
+            if (mPopFragment == null) {
+                mPopFragment = new PopFragment();
             }
+            FragmentTransaction transaction = mFragmentManager.beginTransaction();
+            transaction.add(android.R.id.content, mPopFragment);
+            transaction.addToBackStack("pop");
+            transaction.commit();
         });
     }
 

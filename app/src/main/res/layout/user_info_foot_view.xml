@@ -21,7 +21,7 @@
         android:background="@drawable/image_selector"
         android:gravity="center"
         android:text="退出登录"
-        android:textColor="@color/tipsColor"
+        android:textColor="@color/ycMainColor"
 
         />
 

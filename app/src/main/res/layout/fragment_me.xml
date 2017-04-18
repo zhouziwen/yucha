@@ -3,10 +3,10 @@
                 android:id="@+id/topPadding"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@mipmap/me_list_bg"
+
                 tools:context="com.example.hnTea.ui.me.MeFragment"
     >
-
+    <!--android:background="@mipmap/me_list_bg"-->
     <ListView
         android:id="@+id/me_listView"
         android:layout_width="match_parent"

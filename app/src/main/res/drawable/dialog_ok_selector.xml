@@ -3,7 +3,7 @@
 
 
     <!-- 填充的颜色：这里设置背景透明 -->
-    <solid android:color="#ba5255"
+    <solid android:color="@color/ycMainColor_click"
 
         />
     <!-- 边框的颜色 ：不能和窗口背景色一样-->

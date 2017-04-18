@@ -45,12 +45,12 @@
 
     <ImageView
         android:id="@+id/pop_dismiss"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/popwindow_center"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_tab_add_pressed"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/btn_selecor"
         />
 

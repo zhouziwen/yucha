@@ -7,17 +7,17 @@
     android:background="@mipmap/login_bg_1"
     tools:context=".ui.login.RegisterActivity">
 
-
     <TextView
         android:id="@+id/register_top"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:text="注册"
         android:gravity="center"
+        android:layout_marginRight="15dp"
         android:textColor="@color/white"
         android:drawableLeft="@mipmap/login_back"
         android:fitsSystemWindows="true"
-        android:textSize="18sp"
+        android:textSize="15sp"
         />
 
     <RelativeLayout
@@ -76,7 +76,7 @@
             android:layout_marginBottom="7dp"
             android:layout_alignBottom="@+id/register_sms"
             android:layout_alignRight="@+id/login_line1"
-            android:textColor="@color/shopColor"
+            android:textColor="@color/ycMainColor"
             />
 
         <View
@@ -161,7 +161,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="《电力电用户协议》"
-            android:textColor="@color/or_red"
+            android:textColor="@color/ycMainColor"
             android:layout_marginLeft="5dp"
             />
 

@@ -93,6 +93,7 @@ public class PartnerFragment extends BaseFragment {
         super.initView(view);
         mAppTitleBar.getBack().setVisibility(View.GONE);
         mAppTitleBar.setTitle("合伙人");
+        mAppTitleBar.setBackgroundResource(R.color.ycMainColor);
         mWebNewsFragment = new WebNewsFragment();
         mPartnerPresenter = new PartnerPresenter(null);
         mBannerWebNewsFragment = new BannerWebNewsFragment();

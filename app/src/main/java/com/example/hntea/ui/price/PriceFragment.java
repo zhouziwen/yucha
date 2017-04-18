@@ -2,7 +2,6 @@ package com.example.hnTea.ui.price;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,12 +11,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.example.hnTea.adapter.pager.ViewPagerAdapterForFg;
 import com.example.hnTea.ui.BaseFragment;
 import com.example.hnTea.R;
 import com.example.hnTea.utils.ShowFragmentUtils;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,9 +23,9 @@ public class PriceFragment extends BaseFragment implements ViewPager.OnPageChang
         View.OnClickListener {
     private ViewPager mViewPager_X, mViewPager_B;
     private RadioGroup mGroup;
-    private TextView mProjectText, mSingleText,mStateBar;
+    private TextView mProjectText;
+    private TextView mSingleText;
     private ImageView mImage_Project, mImage_Single;
-    private ViewPagerAdapterForFg mAdapter, mAdapter1;
     private RelativeLayout mLayout_Project, mLayout_Single;
     private RadioButton mButton;
     private XPriceProject_Fg mX_P;
@@ -47,8 +44,10 @@ public class PriceFragment extends BaseFragment implements ViewPager.OnPageChang
     @Override
     public void onResume() {
         super.onResume();
-        mStateBar =mFindViewUtils.findViewById(R.id.state_bar);
-        mStateBar.setHeight(getStatusHeight(getActivity()));
+
+
+        TextView stateBar = mFindViewUtils.findViewById(R.id.state_bar);
+        stateBar.setHeight(getStatusHeight(getActivity()));
     }
 
     @Override
@@ -98,13 +97,13 @@ public class PriceFragment extends BaseFragment implements ViewPager.OnPageChang
         List<BaseFragment> list = new ArrayList<>();
         list.add(mX_S);
         list.add(mX_P);
-        mAdapter = new ViewPagerAdapterForFg(getFragmentManager(), list);
-        mViewPager_X.setAdapter(mAdapter);
+        ViewPagerAdapterForFg adapter = new ViewPagerAdapterForFg(getFragmentManager(), list);
+        mViewPager_X.setAdapter(adapter);
         List<BaseFragment> list1 = new ArrayList<>();
         list1.add(mB_S);
         list1.add(mB_P);
-        mAdapter1 = new ViewPagerAdapterForFg(getFragmentManager(), list1);
-        mViewPager_B.setAdapter(mAdapter1);
+        ViewPagerAdapterForFg adapter1 = new ViewPagerAdapterForFg(getFragmentManager(), list1);
+        mViewPager_B.setAdapter(adapter1);
     }
 
     @Override
@@ -122,7 +121,6 @@ public class PriceFragment extends BaseFragment implements ViewPager.OnPageChang
                 changeTextColor(1);
                 break;
         }
-
     }
 
     @Override

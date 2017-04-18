@@ -18,6 +18,10 @@ import com.example.hnTea.ui.home.shop.ShoppingFragment;
 import com.example.hnTea.utils.ShowFragmentUtils;
 import com.example.hnTea.utils.toast.ApToast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -43,47 +47,30 @@ public class PopFragment extends BaseFragment {
     @Override
     protected void setListener() {
         super.setListener();
-        image1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //消息
-                ApToast.showCenterText("该功能暂未开放，请期待后续版本。");
-            }
+        image1.setOnClickListener(v -> {
+            //消息
+            ApToast.showCenterText("该功能暂未开放，请期待后续版本。");
         });
-        image2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //电话
-                showDialogWithMsg("是否拨打客服电话4006-831536？");
-                mDialog.setLeftButtonListener(new BaseDialog.LeftListener() {
-                    @Override
-                    public void onLeftListener() {
-                        mDialog.dismiss();
-                    }
-                });
-                mDialog.setRightButtonListener(new BaseDialog.RightListener() {
-                    @Override
-                    public void onRightListener() {
-                        mDialog.dismiss();
-                        String number ="400-628-6662";
-                        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+number));
-                        startActivity(intent);
-                    }
-                });
-            }
+        image2.setOnClickListener(v -> {
+            //电话
+            showDialogWithMsg("是否拨打客服电话4006-831536？");
+            mDialog.setLeftButtonListener(() -> mDialog.dismiss());
+            mDialog.setRightButtonListener(() -> {
+                mDialog.dismiss();
+                String number ="400-628-6662";
+                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+number));
+                startActivity(intent);
+            });
         });
-        image3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //购物车
-                if (mShoppingFragment==null){
-                    mShoppingFragment =new ShoppingFragment();
-                }
-                ShowFragmentUtils.showFragment(getActivity(),
-                        mShoppingFragment.getClass(),
-                        FragmentTags.FRAGMENT_SHOPPING,
-                        null,true);
+        image3.setOnClickListener(v -> {
+            //购物车
+            if (mShoppingFragment==null){
+                mShoppingFragment =new ShoppingFragment();
             }
+            ShowFragmentUtils.showFragment(getActivity(),
+                    mShoppingFragment.getClass(),
+                    FragmentTags.FRAGMENT_SHOPPING,
+                    null,true);
         });
         setDismissListener();
     }
@@ -95,54 +82,16 @@ public class PopFragment extends BaseFragment {
     }
 
     private void setDismissListener(){
-        dismiss.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mHandler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        image3.animate().xBy(0f).yBy(400f).alpha(0).start();
-                    }
-                },150);
-                mHandler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        image2.animate().xBy(0f).yBy(400f).alpha(0).start();
-                    }
-                },200);
-                mHandler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        image1.animate().xBy(0f).yBy(400f).alpha(0).start();
-                    }
-                },250);
-                mHandler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        popSelf();
-                    }
-                },500);
-            }
+        dismiss.setOnClickListener(v -> {
+            mHandler.postDelayed(() -> image3.animate().xBy(0f).yBy(400f).alpha(0).start(),150);
+            mHandler.postDelayed(() -> image2.animate().xBy(0f).yBy(400f).alpha(0).start(),200);
+            mHandler.postDelayed(() -> image1.animate().xBy(0f).yBy(400f).alpha(0).start(),250);
+            mHandler.postDelayed(this::popSelf,500);
         });
 
-        mHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                image1.animate().xBy(10f).yBy(-400f).alpha(1).setDuration(150).start();
-            }
-        },150);
-        mHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                playImage2();
-            }
-        },200);
-        mHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                playImage3();
-            }
-        },250);
+        mHandler.postDelayed(() -> image1.animate().xBy(10f).yBy(-400f).alpha(1).setDuration(150).start(),150);
+        mHandler.postDelayed(this::playImage2,200);
+        mHandler.postDelayed(this::playImage3,250);
     }
 
     private void playImage2(){
@@ -152,3 +101,4 @@ public class PopFragment extends BaseFragment {
         image3.animate().xBy(10f).yBy(-400f).alpha(1).setDuration(150).start();
     }
 }
+

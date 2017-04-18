@@ -87,18 +87,12 @@ public class BaseFragment extends Fragment {
 
     protected void setListener() {
         if (mAppTitleBar != null) {
-            mAppTitleBar.getBack().setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    hiddenLoading();
-                    popSelf();
-                }
+            mAppTitleBar.getBack().setOnClickListener(v -> {
+                hiddenLoading();
+                popSelf();
             });
-            mAppTitleBar.getAction().setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+            mAppTitleBar.getAction().setOnClickListener(v -> {
 
-                }
             });
         }
 

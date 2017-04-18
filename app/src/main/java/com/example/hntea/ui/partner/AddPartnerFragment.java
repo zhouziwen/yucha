@@ -310,11 +310,11 @@ public class AddPartnerFragment extends BaseFragment implements View.OnClickList
 
     private void changeTvColor(int position) {
         if (position == 1) {
-            mSingle.setTextColor(getResources().getColor(R.color.shopColor));
+            mSingle.setTextColor(getResources().getColor(R.color.ycMainColor));
             mTeam.setTextColor(getResources().getColor(R.color.price_textColor_pressed));
         } else {
             mSingle.setTextColor(getResources().getColor(R.color.price_textColor_pressed));
-            mTeam.setTextColor(getResources().getColor(R.color.shopColor));
+            mTeam.setTextColor(getResources().getColor(R.color.ycMainColor));
         }
     }    //根据索引值返回不同的数据
 
