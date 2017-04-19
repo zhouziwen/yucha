@@ -1,15 +1,18 @@
 package com.example.hnTea.ui.home;
 
+import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
+import android.os.Handler;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+
 
 import com.android.volley.VolleyError;
+import com.example.hnTea.R;
 import com.example.hnTea.apcontains.FragmentTags;
 import com.example.hnTea.mvpmodel.home.bean.HomeBean;
 import com.example.hnTea.mvpmodel.home.bean.MainShop_Base;
@@ -18,33 +21,27 @@ import com.example.hnTea.mvpmodel.home.bean.MainShop_ShangJia;
 import com.example.hnTea.mvppresenter.home.HomePresenter;
 import com.example.hnTea.mvppresenter.home.IViewHome;
 import com.example.hnTea.ui.BaseFragment;
-import com.example.hnTea.R;
 import com.example.hnTea.ui.home.adapter.HomeAdapter;
 import com.example.hnTea.ui.home.shop.BusinessYellowPagesFragment;
 import com.example.hnTea.ui.home.shop.ShopFragment;
 import com.example.hnTea.ui.home.shop.ShoppingFragment;
-import com.example.hnTea.ui.price.SearchPriceFragment;
 import com.example.hnTea.utils.ShowFragmentUtils;
 import com.example.hnTea.utils.toast.ApToast;
-import com.github.jdsjlzx.recyclerview.LRecyclerView;
-import com.github.jdsjlzx.recyclerview.LRecyclerViewAdapter;
-
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends BaseFragment {
     private HomePresenter mHomePresenter;
-    private LRecyclerView mRecyclerView;
-    private LRecyclerViewAdapter mLRecyclerViewAdapter;
+    private RecyclerView mRecyclerView;
     private HomeAdapter mAdapter;
-    private SearchPriceFragment mSearchPriceFragment;
+    private ShoppingFragment mShoppingFragment;
     private HomeListDetail_Fg homeListDetail_fg;
     private BusinessYellowPagesFragment mBusinessYellowPagesFragment;
     private List<MainShop_Category> mMainShop_categories;
     private List<MainShop_ShangJia> mMainShop_shangJias;
     private ShopFragment mShopFragment;
-    private TextView queryTv, mStateBar;
+    private SwipeRefreshLayout mSwipeRefreshLayout;
 
     @Override
     public void onResume() {
@@ -62,22 +59,33 @@ public class HomeFragment extends BaseFragment {
     protected void initView(View view) {
         super.initView(view);
         mHomePresenter = new HomePresenter(null);
-        queryTv = mFindViewUtils.findViewById(R.id.query);
         mRecyclerView = mFindViewUtils.findViewById(R.id.home_listView);
-        String var = "";
-        for (int i = var.length(); i < var.length(); i--) {
+        mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_refresh);
+        mSwipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.ycMainColor), Color.BLUE);
+        mSwipeRefreshLayout.setOnRefreshListener(() -> {
+            mSwipeRefreshLayout.setRefreshing(true);
+            mHandler.post(() -> {
+                request();
+                setData();
+                mSwipeRefreshLayout.setRefreshing(false);
+            });
 
-        }
+        });
     }
 
     @Override
     protected void setListener() {
         super.setListener();
-        queryTv.setOnClickListener(v -> {
-            //顶部跳转搜索页面
-            pushSearchDetail();
-        });
-        mRecyclerView.setOnRefreshListener(this::request);
+//        mAppTitleBar.getAction().setOnClickListener(v -> {
+//            //跳转购物车
+//            if (mShoppingFragment == null) {
+//                mShoppingFragment = new ShoppingFragment();
+//            }
+//            ShowFragmentUtils.showFragment(getActivity(),
+//                    mShoppingFragment.getClass(),
+//                    FragmentTags.FRAGMENT_SHOPPING,
+//                    null, true);
+//        });
     }
 
     @Override
@@ -164,8 +172,7 @@ public class HomeFragment extends BaseFragment {
         };
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),
                 LinearLayoutManager.VERTICAL, false));
-        mLRecyclerViewAdapter=new LRecyclerViewAdapter(mAdapter);
-        mRecyclerView.setAdapter(mLRecyclerViewAdapter);
+        mRecyclerView.setAdapter(mAdapter);
     }
 
     private void request() {
@@ -173,7 +180,6 @@ public class HomeFragment extends BaseFragment {
             @Override
             public void onSuccess(MainShop_Base data) {
                 hiddenLoading();
-                mRecyclerView.refreshComplete();
                 mAdapter.upData(data);
                 mMainShop_categories = data.getCategory();
                 mMainShop_shangJias = data.getShnagJia();
@@ -181,7 +187,6 @@ public class HomeFragment extends BaseFragment {
 
             @Override
             public void onPhpFail(String var) {
-                mRecyclerView.refreshComplete();
                 ApToast.showBottom(var);
             }
 
@@ -192,7 +197,6 @@ public class HomeFragment extends BaseFragment {
 
             @Override
             public void onFail(VolleyError volleyError) {
-                mRecyclerView.refreshComplete();
                 ApToast.showBottom(volleyError.getMessage());
             }
         });
@@ -211,21 +215,5 @@ public class HomeFragment extends BaseFragment {
                     FragmentTags.FRAGMENT_HOME_LIST_DETAIL,
                     bundle, true);
         }
-    }
-    private void pushSearchDetail() {
-//        if (mHomeSearchFragment == null) {
-//            mHomeSearchFragment = new HomeSearchFragment();
-//        }
-//        ShowFragmentUtils.showFragment(getActivity(),
-//                mHomeSearchFragment.getClass(),
-//                FragmentTags.FRAGMENT_HOME_SEARCH,
-//                null, true);
-        if (mSearchPriceFragment == null) {
-            mSearchPriceFragment = new SearchPriceFragment();
-        }
-        ShowFragmentUtils.showFragment(getActivity(),
-                mSearchPriceFragment.getClass(),
-                "searchPrice",
-                null, true);
     }
 }

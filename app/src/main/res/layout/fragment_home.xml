@@ -6,6 +6,7 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               tools:context="com.example.hnTea.ui.home.HomeFragment">
+
    <android.support.design.widget.CoordinatorLayout
        android:layout_width="match_parent"
        android:layout_height="wrap_content">
@@ -70,14 +71,20 @@
                 android:visibility="invisible"/>
         </RelativeLayout>
     </android.support.design.widget.AppBarLayout>
-    <com.github.jdsjlzx.recyclerview.LRecyclerView
+       <android.support.v4.widget.SwipeRefreshLayout
+           android:id="@+id/swipe_refresh"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/home_listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:divider="@color/fragment_bg"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+
         >
-    </com.github.jdsjlzx.recyclerview.LRecyclerView>
+    </android.support.v7.widget.RecyclerView>
+       </android.support.v4.widget.SwipeRefreshLayout>
      <!--<android.support.v7.widget.RecyclerView-->
     <!--android:id="@+id/home_listView"-->
     <!--android:layout_width="match_parent"-->
@@ -86,4 +93,5 @@
     <!--/>-->
 
    </android.support.design.widget.CoordinatorLayout>
+
 </LinearLayout>

@@ -217,12 +217,9 @@ public class PartnerFragment extends BaseFragment {
                         .placeholder(R.mipmap.pic_banner_moren)
                         .diskCacheStrategy(DiskCacheStrategy.RESULT)
                         .into(imageView2);
-                holder.setOnClickListener(R.id.partner_listItem_Layout, new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        //点击跳转web
-                        showWebWithUrl(t.getId());
-                    }
+                holder.setOnClickListener(R.id.partner_listItem_Layout, v -> {
+                    //点击跳转web
+                    showWebWithUrl(t.getId());
                 });
             }
         };
@@ -310,13 +307,13 @@ public class PartnerFragment extends BaseFragment {
             final ImageView img = new ImageView(getContext());
             img.setScaleType(ImageView.ScaleType.FIT_XY);
             if (i == 0) {
-                img.setImageResource(R.mipmap.newbanner3);
+                img.setImageResource(R.mipmap.partnerbanner4);
             } else if (i == 1) {
-                img.setImageResource(R.mipmap.newbanner2);
+                img.setImageResource(R.mipmap.partnerbanner5);
             } else if (i == 2) {
-                img.setImageResource(R.mipmap.newbanner1);
+                img.setImageResource(R.mipmap.partnerbanner6);
             } else {
-                img.setImageResource(R.mipmap.partner_addpartner1);
+                img.setImageResource(R.mipmap.partnerbanner7);
             }
             views.add(img);
             img.setOnClickListener(v -> {

@@ -145,6 +145,7 @@ public abstract class HomeAdapter extends MultiItemTypeAdapter<HomeBean> {
             @Override
             public void convert(BaseRecyclerViewHolder holder, HomeBean homeBean, int position) {
                 if (mData != null) {
+
                     //热门产品
                     RecyclerView mHotRecycler = holder.getView(R.id.home_listHeader_RecyclerView2);
                     mHotAdapter
