@@ -29,7 +29,7 @@ public class HelperFragment extends BaseFragment {
     private List<HelperModel> mData;
     private ListView mListView;
     private CommonAdapter<String> mAdapter;
-    private DlDFragment mDlDFragment;
+    private HnTeaFragment mDlDFragment;
     private QuestionFragment mQuestionFragment;
     private MsgFragment mMsgFragment;
     private BillQuestionFragment mBillQuestionFragment;
@@ -86,7 +86,7 @@ public class HelperFragment extends BaseFragment {
             @Override
             public void onClickBack(int position, View view, BaseViewHolder holder) {
                 if (mDlDFragment == null) {
-                    mDlDFragment = new DlDFragment();
+                    mDlDFragment = new HnTeaFragment();
                 }
                 Bundle bundle =new Bundle();
                 bundle.putString("helper_title",mData.get(position).getTitle());
@@ -116,7 +116,7 @@ public class HelperFragment extends BaseFragment {
 //                    case 2:
 //                        //关于我们
 //                        if (mDlDFragment == null) {
-//                            mDlDFragment = new DlDFragment();
+//                            mDlDFragment = new HnTeaFragment();
 //                        }
 //                        ShowFragmentUtils.showFragment(getActivity(),
 //                                mDlDFragment.getClass(),

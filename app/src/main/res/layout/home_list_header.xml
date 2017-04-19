@@ -11,7 +11,7 @@
         android:id="@+id/home_listHeader_Pager"
         android:layout_width="match_parent"
         android:layout_height="170dp"
-        android:background="@mipmap/placeholder"
+        android:background="@mipmap/pic_banner_moren"
         />
 
     <LinearLayout

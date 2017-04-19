@@ -10,17 +10,19 @@ public class BaseUrl {
 
     //返回服务器baseUrl
     public static String getBaseUrl() {
-        return "https://www.dianlidian.com/api.php";
-//        return "http://www.51yucha.com/api.php";
+//        return "https://www.dianlidian.com/api.php";
+        return "http://www.51yucha.com/api.php";
     }
 
     public static String getBaseUrlNoEnd(){
-        return "https://www.dianlidian.com";
+        return "http://www.51yucha.com";
+//        return "https://www.dianlidian.com";
     }
 
 
     public static String getUMShareApUrl(){
-        return "https://www.dianlidian.com/site/downLoad.html";
+        return "http://www.51yucha.com";
+//        return "https://www.dianlidian.com/site/downLoad.html";
     }
 
 }

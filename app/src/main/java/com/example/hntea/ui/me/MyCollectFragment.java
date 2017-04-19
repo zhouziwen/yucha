@@ -84,7 +84,7 @@ public class MyCollectFragment extends BaseFragment {
                 if (item.getGoods_thumb()==null) return;
                 Glide.with(getContext())
                         .load(item.getGoods_thumb())
-                        .placeholder(R.mipmap.placeholder)
+                        .placeholder(R.mipmap.pic_banner_moren)
                         .diskCacheStrategy(DiskCacheStrategy.RESULT)
                         .into(imageView);
             }

@@ -174,7 +174,7 @@ public class BuyFragment extends BaseFragment {
                 ImageView img = holder.getView(R.id.buy_shopIcon);
                 Glide.with(getContext())
                         .load(item.getGoods_thumb())
-                        .placeholder(R.mipmap.placeholder)
+                        .placeholder(R.mipmap.pic_banner_moren)
                         .diskCacheStrategy(DiskCacheStrategy.RESULT)
                         .into(img);
                 holder.setText(R.id.buy_shopTitle, item.getGoods_name())

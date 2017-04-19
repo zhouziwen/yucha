@@ -7,6 +7,13 @@ package com.example.hnTea.mvpmodel.home.bean;
 public class MainShop_HotShop {
 
 
+    public MainShop_HotShop(String goods_id, String goods_name, String shop_price, String goods_thumb) {
+        this.goods_id = goods_id;
+        this.goods_name = goods_name;
+        this.shop_price = shop_price;
+        this.goods_thumb = goods_thumb;
+    }
+
     /**
      * goods_id : 1
      * goods_name : 小米（MI）小米净化器2智能家用卧室空气净化器除 甲醛雾霾PM2.5

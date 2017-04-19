@@ -166,11 +166,11 @@ public class ShopMsgFragment extends BaseFragment {
                 //商品缩略小图
                 ImageView smallIcon = (ImageView) view.findViewById(R.id.choseType_image);
                 if (mData.getGallery().size() == 0 ) {
-                    smallIcon.setImageResource(R.mipmap.placeholder);
+                    smallIcon.setImageResource(R.mipmap.pic_banner_moren);
                 }else {
                     Glide.with(getContext())
                             .load(mData.getGallery().get(0).getImg_url())
-                            .placeholder(R.mipmap.placeholder)
+                            .placeholder(R.mipmap.pic_banner_moren)
                             .diskCacheStrategy(DiskCacheStrategy.RESULT)
                             .into(smallIcon);
                 }
@@ -403,7 +403,7 @@ public class ShopMsgFragment extends BaseFragment {
                 ImageView imageView = holder.getView(R.id.home_HListView_image);
                 Glide.with(getContext())
                         .load(item.getGoods_thumb())
-                        .placeholder(R.mipmap.placeholder)
+                        .placeholder(R.mipmap.pic_banner_moren)
                         .diskCacheStrategy(DiskCacheStrategy.RESULT)
                         .into(imageView);
                 holder.setText(R.id.home_HListView_title, item.getGoods_name())

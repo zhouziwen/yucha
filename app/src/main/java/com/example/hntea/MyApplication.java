@@ -49,9 +49,9 @@ public class MyApplication extends Application {
         //********************************初始化友盟分享*********************
         UMShareAPI.get(this);
 //        Config.DEBUG = true;
-        PlatformConfig.setWeixin("wx8a43644a5b616328", "e1ff086b5394b49475bb4c227e3afc74");
+        PlatformConfig.setWeixin("wx3458fa2569f13641", "fc6d2f86f25aed58c1ef327e9eeb06e9");
         PlatformConfig.setSinaWeibo("3553809294", "fd3698f6f5d6fcd1152221dfb0823d64");
-        PlatformConfig.setQQZone("1105900380", "CzM1Q0Bb5yRnKgdY");
+        PlatformConfig.setQQZone("1106033983", "0Pc5jmcgGO8D13gl");
         initDataBase(this);
     }
 

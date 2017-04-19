@@ -3,7 +3,7 @@
              android:id="@+id/topPadding"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context="com.example.hnTea.ui.me.DlDFragment">
+             tools:context="com.example.hnTea.ui.me.user.helper.HnTeaFragment">
 
     <com.example.hnTea.widget.AppTitleBar
         android:id="@+id/app_title_bar"
@@ -22,15 +22,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/icon1"
-            android:layout_below="@+id/app_title_bar"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="49dp"/>
 
 
         <TextView
+            android:id="@+id/version_code"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="电力电V2.2"
+            android:text="豫茶V1.0"
             android:textColor="@color/price_textColor_pressed"
             android:textSize="17sp"
             android:layout_below="@+id/dld_icon"
@@ -42,7 +42,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="河南太能电气股份有限公司"
+            android:text="河南豫茶电子商务有限公司"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="35dp"
@@ -54,7 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="8sp"
-            android:text="Copyright 2015-2016 www.dianlidian.com All Rights Reserved 豫ICP备14007708号-7"
+            android:text="Copyright 2016-2017 www.51yucha.com All Rights Reserved 豫ICP备16032812号"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="20dp"

@@ -19,7 +19,7 @@
         android:layout_below="@+id/XPrice_listItem_title"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
-        android:drawableLeft="@mipmap/price_brand2"
+        android:drawableLeft="@mipmap/ic_price_brand"
         android:text="施耐德电气集团"
         android:gravity="center_vertical"
         />
@@ -31,7 +31,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="10dp"
         android:layout_toRightOf="@+id/XPrice_listItem_time"
-        android:drawableLeft="@mipmap/price_amount2"
+        android:drawableLeft="@mipmap/ic_price_amount"
         android:text="3000台"
         android:gravity="center_vertical"
         />
@@ -42,7 +42,7 @@
         android:layout_below="@+id/XPrice_listItem_location"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
-        android:drawableLeft="@mipmap/price_yibao"
+        android:drawableLeft="@mipmap/ic_price_yibao"
         android:gravity="center_vertical"
         android:text="已竞价：1200次"
 
@@ -54,7 +54,7 @@
         android:layout_alignLeft="@+id/XPrice_listItem_location"
         android:layout_alignStart="@+id/XPrice_listItem_location"
         android:layout_alignTop="@+id/XPrice_listItem_type"
-        android:drawableLeft="@mipmap/price_tishi"
+        android:drawableLeft="@mipmap/ic_price_tishi"
         android:gravity="center_vertical"
         android:text="截止时间：2016-12-14"
         />

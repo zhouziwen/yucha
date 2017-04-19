@@ -139,7 +139,7 @@ public class BusinessHomeGoodsFragment extends BaseFragment {
                 holder.setText(R.id.home_HListView_title, item.getGoods_name())
                         .setText(R.id.home_HListView_price, String.format("%s%s", "¥", item.getShop_price()));
                 ImageView imageView = holder.getView(R.id.home_HListView_image);
-                Glide.with(getContext()).load(item.getGoods_thumb()).placeholder(R.mipmap.placeholder).into(imageView);
+                Glide.with(getContext()).load(item.getGoods_thumb()).placeholder(R.mipmap.pic_banner_moren).into(imageView);
             }
 
             @Override

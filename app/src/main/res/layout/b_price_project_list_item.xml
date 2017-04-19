@@ -22,7 +22,7 @@
         android:layout_below="@+id/XPrice_listItem_title"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
-        android:drawableLeft="@mipmap/price_location2"
+        android:drawableLeft="@mipmap/ic_price_location"
         android:text="陕西省"
         android:gravity="center_vertical"
         />
@@ -34,7 +34,7 @@
 
         android:layout_marginTop="10dp"
         android:layout_toRightOf="@id/indicator"
-        android:drawableLeft="@mipmap/price_type2"
+        android:drawableLeft="@mipmap/ic_price_type"
         android:text="建筑"
         android:paddingLeft="2.5dp"
         android:gravity="center_vertical"
@@ -48,7 +48,7 @@
         android:layout_marginTop="5dp"
         android:text="中标后"
         android:gravity="center_vertical"
-        android:drawableLeft="@mipmap/price_stage1"
+        android:drawableLeft="@mipmap/ic_price_stage"
         style="@style/XPrice_listItem_textBase_style"/>
 
     <TextView
@@ -57,7 +57,7 @@
         android:layout_alignLeft="@+id/XPrice_listItem_location"
         android:layout_alignStart="@+id/XPrice_listItem_location"
         android:layout_alignTop="@+id/XPrice_listItem_type"
-        android:drawableLeft="@mipmap/price_tishi"
+        android:drawableLeft="@mipmap/ic_price_tishi"
         android:layout_alignBaseline="@+id/XPrice_listItem_type"
         android:gravity="center_vertical"
         android:text="截止时间：2016-12-14"

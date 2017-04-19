@@ -73,7 +73,7 @@
         android:background="@color/white"
         android:orientation="horizontal"
         android:layout_below="@+id/price_utilView"
-        android:layout_toEndOf="@+id/campus_viewpager1">
+        >
 
 
         <RelativeLayout

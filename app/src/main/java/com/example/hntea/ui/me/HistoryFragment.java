@@ -79,7 +79,7 @@ public class HistoryFragment extends BaseFragment {
                 ImageView imageView = holder.getView(R.id.home_listDetail_listItem_image);
                 Glide.with(getContext())
                         .load(BaseUrl.getBaseUrl()+item.getGoods_thumb())
-                        .placeholder(R.mipmap.placeholder)
+                        .placeholder(R.mipmap.pic_banner_moren)
                         .into(imageView);
             }
         };

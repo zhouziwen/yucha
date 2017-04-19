@@ -201,7 +201,7 @@ public class HomeListDetail_Fg extends BaseFragment implements OnPopWinDisMisBac
                 ImageView imageView = holder.getView(R.id.home_listDetail_listItem_image);
                 Glide.with(getContext())
                         .load(item.getGoods_thumb())
-                        .placeholder(R.mipmap.placeholder)
+                        .placeholder(R.mipmap.pic_banner_moren)
                         .into(imageView);
             }
 

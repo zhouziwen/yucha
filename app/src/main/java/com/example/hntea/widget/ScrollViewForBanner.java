@@ -55,7 +55,7 @@ public  abstract class ScrollViewForBanner {
             }
             Glide.with(context)
                     .load(urls.get(j))
-                    .placeholder(R.mipmap.placeholder)
+                    .placeholder(R.mipmap.pic_banner_moren)
                     .diskCacheStrategy(DiskCacheStrategy.RESULT)
                     .into(img);
             views.add(img);

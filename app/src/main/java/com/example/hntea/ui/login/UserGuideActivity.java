@@ -53,14 +53,11 @@ public class UserGuideActivity extends BaseActivity {
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 DefaultTips(position);
                 if (position==2){
-                    mHandler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            Intent intent =new Intent();
-                            intent.setClass(UserGuideActivity.this,SplashActivity.class);
-                            startActivity(intent);
-                        }
-                    },1000);
+                    mHandler.post(() -> {
+                        Intent intent =new Intent();
+                        intent.setClass(UserGuideActivity.this,SplashActivity.class);
+                        startActivity(intent);
+                    });
                 }
             }
             @Override
@@ -76,9 +73,9 @@ public class UserGuideActivity extends BaseActivity {
     protected void setData() {
         super.setData();
         List<View> views =new ArrayList<>();
-        int[] ints ={R.mipmap.pic_hello11,
-                     R.mipmap.pic_hello22,
-                     R.mipmap.pic_hello33};
+        int[] ints ={R.mipmap.yindaoye1,
+                     R.mipmap.yindaoye2,
+                     R.mipmap.yindaoye3};
         for (int i = 0; i <ints.length ; i++) {
             ImageView img =new ImageView(this);
             img.setImageResource(ints[i]);
@@ -94,11 +91,8 @@ public class UserGuideActivity extends BaseActivity {
         List<View> views = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             ImageView img = new ImageView(this);
-            img.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    //banner点击事件
-                }
+            img.setOnClickListener(v -> {
+                //banner点击事件
             });
             img.setScaleType(ImageView.ScaleType.FIT_XY);
             if (i == 0) {

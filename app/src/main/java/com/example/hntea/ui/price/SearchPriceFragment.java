@@ -432,7 +432,7 @@ public class SearchPriceFragment extends BaseFragment implements View.OnClickLis
                         TextView textView = holder.getView(R.id.search_price_listItem_tv);
                         if (leftId == position) {
                             textView.setTextColor(getResources().getColor(R.color
-                                    .tipsColor));
+                                    .ycMainColor));
                         } else {
                             textView.setTextColor(getResources().getColor(R.color
                                     .price_textColor_pressed));
@@ -468,7 +468,7 @@ public class SearchPriceFragment extends BaseFragment implements View.OnClickLis
                                 TextView textView = holder.getView(R.id.search_price_listItem_tv);
                                 if (rightId == position) {
                                     textView.setTextColor(getResources().getColor(R.color
-                                            .tipsColor));
+                                            .ycMainColor));
                                 } else {
                                     textView.setTextColor(getResources().getColor(R.color
                                             .price_textColor_pressed));

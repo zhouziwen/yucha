@@ -199,7 +199,7 @@ public class HomeData extends BaseModel {
                             //解析数据
                             String json = jsonObject.getString("data");
                             final ShopDetail_Base shopDetail_base =
-                                    JsonUtils.parseArray(json, ShopDetail_Base.class);
+                                     JsonUtils.parseArray(json, ShopDetail_Base.class);
                             mHandler.post(() -> iActionHome.success(shopDetail_base));
                         } else {
                             mHandler.post(() -> {

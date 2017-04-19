@@ -40,7 +40,7 @@
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
                 app:layout_collapseMode="parallax"
-                android:background="@mipmap/placeholder"
+                android:background="@mipmap/pic_banner_moren"
                 />
 
             <LinearLayout

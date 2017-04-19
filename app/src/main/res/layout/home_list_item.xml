@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:scaleType="fitXY"
-        android:src="@mipmap/home_hlist_item1"
+        android:src="@mipmap/pic_fenlei_moren_1"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"/>
 

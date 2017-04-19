@@ -180,7 +180,7 @@ public class PartnerFragment extends BaseFragment {
                 ImageView imageView = holder.getView(R.id.pic);
                 Glide.with(getActivity())
                         .load(t.getList().get(0).get("imgUrl"))
-                        .placeholder(R.mipmap.placeholder)
+                        .placeholder(R.mipmap.pic_banner_moren)
                         .diskCacheStrategy(DiskCacheStrategy.RESULT)
                         .into(imageView);
                 holder.setOnClickListener(R.id.partner_listItem_Layout, new View.OnClickListener() {
@@ -204,17 +204,17 @@ public class PartnerFragment extends BaseFragment {
                 ImageView imageView2 = holder.getView(R.id.pic2);
                 Glide.with(getActivity())
                         .load(t.getList().get(0).get("imgUrl"))
-                        .placeholder(R.mipmap.placeholder)
+                        .placeholder(R.mipmap.pic_banner_moren)
                         .diskCacheStrategy(DiskCacheStrategy.RESULT)
                         .into(imageView);
                 Glide.with(getActivity())
                         .load(t.getList().get(1).get("imgUrl"))
-                        .placeholder(R.mipmap.placeholder)
+                        .placeholder(R.mipmap.pic_banner_moren)
                         .diskCacheStrategy(DiskCacheStrategy.RESULT)
                         .into(imageView1);
                 Glide.with(getActivity())
                         .load(t.getList().get(2).get("imgUrl"))
-                        .placeholder(R.mipmap.placeholder)
+                        .placeholder(R.mipmap.pic_banner_moren)
                         .diskCacheStrategy(DiskCacheStrategy.RESULT)
                         .into(imageView2);
                 holder.setOnClickListener(R.id.partner_listItem_Layout, new View.OnClickListener() {

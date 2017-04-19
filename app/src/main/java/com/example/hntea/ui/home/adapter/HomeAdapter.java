@@ -107,6 +107,7 @@ public abstract class HomeAdapter extends MultiItemTypeAdapter<HomeBean> {
                                         ImageView img = holder.getView(R.id.home_h_recycler_image);
                                         Glide.with(context)
                                                 .load(mImages.get(position))
+                                                .placeholder(R.mipmap.pic_fenlei_moren)
                                                 .diskCacheStrategy(DiskCacheStrategy.RESULT)
                                                 .into(img);
                                         holder.setText(R.id.home_h_recycler_text, item);
@@ -161,7 +162,7 @@ public abstract class HomeAdapter extends MultiItemTypeAdapter<HomeBean> {
                             String url = item.getGoods_thumb();
                             Glide.with(context)
                                     .load(url)
-                                    .placeholder(R.mipmap.placeholder)
+                                    .placeholder(R.mipmap.pic_remen_moren)
                                     .diskCacheStrategy(DiskCacheStrategy.RESULT)
                                     .into(img);
                             holder.setOnClickListener(R.id.home_HListView_Layout,
@@ -188,6 +189,7 @@ public abstract class HomeAdapter extends MultiItemTypeAdapter<HomeBean> {
                                     String url = item.getLogo_img();
                                     Glide.with(context)
                                             .load(url)
+                                            .placeholder(R.mipmap.pic_shangjia_moren)
                                             .diskCacheStrategy(DiskCacheStrategy.RESULT)
                                             .into(img);
                                     holder.setText(R.id.home_hlist_item1_text, item.getCompany_name());
@@ -226,7 +228,7 @@ public abstract class HomeAdapter extends MultiItemTypeAdapter<HomeBean> {
                 ImageView img = holder.getView(R.id.home_list_item_header);
                 Glide.with(context)
                         .load(mNormalList.get(positions - 2).getImage())
-                        .placeholder(R.mipmap.placeholder)
+                        .placeholder(R.mipmap.pic_fenlei_moren)
                         .diskCacheStrategy(DiskCacheStrategy.RESULT)
                         .into(img);
                 img.setOnClickListener(v -> {

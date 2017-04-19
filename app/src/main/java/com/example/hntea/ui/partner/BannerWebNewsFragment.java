@@ -40,7 +40,7 @@ public class BannerWebNewsFragment extends BaseFragment {
     @Override
     protected void setData() {
         super.setData();
-        mWebView.loadUrl("http://www.dianlidian.com/");
+        mWebView.loadUrl("http://www.51yucha.com/");
     }
 
     @Override

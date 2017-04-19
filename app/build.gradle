@@ -10,8 +10,8 @@ android {
         applicationId "com.example.hnTea"
         minSdkVersion 19
         targetSdkVersion 23
-        versionCode 5
-        versionName "2.3"
+        versionCode 1
+        versionName "1.0"
         // dex突破65535的限制
         multiDexEnabled true
         // AndroidManifest.xml 里面UMENG_CHANNEL的value为 ${UMENG_CHANNEL_VALUE}

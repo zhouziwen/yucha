@@ -80,7 +80,7 @@
         android:layout_below="@+id/myOrder_list_item_OrderTitle"
         android:gravity="center"
         android:layout_marginTop="20dp"
-        android:textColor="@color/tipsColor"
+        android:textColor="@color/ycMainColor"
         />
 
     <ImageView
