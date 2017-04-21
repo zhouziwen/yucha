@@ -25,7 +25,7 @@ public class UserConfigPresenter extends BasePresenter {
         mUserConfigData = new UserConfigData();
     }
 
-    public void getUserInfo(final IViewUser<MyInfo> iActionUser) {
+        public void getUserInfo(final IViewUser<MyInfo> iActionUser) {
         mUserConfigData.getUserInfo(new IActionUser<MyInfo>() {
             @Override
             public void success(MyInfo response) {

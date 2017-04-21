@@ -7,12 +7,18 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -20,8 +26,12 @@ import android.widget.TextView;
 
 import com.android.volley.VolleyError;
 import com.example.hnTea.R;
+import com.example.hnTea.https.BaseUrl;
+import com.example.hnTea.mvpmodel.user.bean.UserhelperModel;
 import com.example.hnTea.mvppresenter.login.IViewLogin;
 import com.example.hnTea.mvppresenter.login.LoginPresenter;
+import com.example.hnTea.mvppresenter.user.IViewUser;
+import com.example.hnTea.mvppresenter.user.UserHelperPresenter;
 import com.example.hnTea.ui.BaseActivity;
 
 import java.util.Timer;
@@ -40,7 +50,8 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     private LoginPresenter mLoginPresenter;
     private String phone;
     private int smsNum;
-
+    private UserHelperPresenter mUserHelperPresenter;
+    private WebView mWebView;
     private Timer mTimer;
     private boolean SmsBool = false;
     private boolean isSelectorConfig = false;
@@ -74,6 +85,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     protected void initView() {
         super.initView();
         Intent intent = getIntent();
+        mUserHelperPresenter = new UserHelperPresenter(null);
         mPageType = intent.getIntExtra("PageType", 1);
         mUserConfigTv = mFindViewUtils.findViewById(R.id.register_tv_userConfig);
         mUserConfigImg = mFindViewUtils.findViewById(R.id.register_img_userConfig);
@@ -112,6 +124,34 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         super.setData();
     }
 
+    private void getRegisterXieyi() {
+        mUserHelperPresenter.getUserHelperData("register", new IViewUser<UserhelperModel>() {
+            @Override
+            public void onSuccess(UserhelperModel response) {
+                mWebView.loadDataWithBaseURL(BaseUrl.getBaseUrl(), response.getContent(), "text/html", "utf-8", null);
+                mHandler.postDelayed(() -> hiddenLoading(), 500);
+//                hiddenLoading();
+            }
+
+            @Override
+            public void onPhpFail(String var) {
+                hiddenLoading();
+                showAlertWithMsg(var);
+            }
+
+            @Override
+            public void onStart(String var) {
+                showLoading();
+            }
+
+            @Override
+            public void onFail(VolleyError volleyError) {
+                hiddenLoading();
+                showAlertWithMsg("请检查网络");
+            }
+        });
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -142,23 +182,29 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                 }
                 break;
             case R.id.register_tv_userConfig:
+
                 //注册界面的用户协议
                 View view = LayoutInflater.from(this)
                         .inflate(R.layout.dialog_user_config, null);
-                TextView userConfig = (TextView) view.findViewById(R.id.userConfig_tv);
-                userConfig.setText(getText());
+                mWebView = (WebView) view.findViewById(R.id.register_webView);
+                WebSettings webSettings = mWebView.getSettings();
+                webSettings.setJavaScriptEnabled(true);
+                webSettings.setCacheMode(WebSettings.LOAD_DEFAULT);
+                webSettings.setSupportZoom(true);
+//        webSettings.setTextSize(WebSettings.TextSize.SMALLER);
+                webSettings.setBuiltInZoomControls(false);
+                mWebView.setWebViewClient(new WebViewClient());
+                mWebView.setWebChromeClient(new WebChromeClient());
+                mHandler.post(this::getRegisterXieyi);
                 Dialog dialog = new AlertDialog.Builder(this)
-                        .setTitle("电力电用户注册协议")
+                        .setTitle("豫茶用户注册协议")
                         .setView(view)
-                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        })
+                        .setPositiveButton("确定", (dialog1, which) -> dialog1.dismiss())
                         .setCancelable(false)
                         .create();
-                dialog.show();
+                mHandler.postDelayed(dialog::show
+                , 500);
+//                dialog.show();
                 break;
             case R.id.register_img_userConfig:
                 //注册界面 用户协议旁边的图标

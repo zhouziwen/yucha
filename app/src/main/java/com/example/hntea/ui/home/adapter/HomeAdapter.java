@@ -77,9 +77,11 @@ public abstract class HomeAdapter extends MultiItemTypeAdapter<HomeBean> {
                 LinearLayout linearLayout = holder.getView(R.id.home_banner_tips);
                 if (mData != null) {
                     if (!isOnce) {
-                        List<String> urls = new ArrayList<String>();
+                        List<String> urls = new ArrayList<>();
                         for (MainShop_Banner banner : mData.getBanners()) {
-                            urls.add(banner.getImage());
+                            if (banner != null) {
+                                urls.add(banner.getImage());
+                            }
                         }
                         ScrollViewForBanner scrollViewForBanner =
                                 new ScrollViewForBanner(pager, urls, linearLayout, mContext, false) {

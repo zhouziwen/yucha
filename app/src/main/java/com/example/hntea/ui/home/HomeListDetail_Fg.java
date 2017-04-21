@@ -438,7 +438,7 @@ public class HomeListDetail_Fg extends BaseFragment implements OnPopWinDisMisBac
     //改变top文字的颜色
     private void changeTextColor(TextView textView, boolean isRed) {
         if (isRed) {
-            textView.setTextColor(getResources().getColor(R.color.price_viewColor));
+            textView.setTextColor(getResources().getColor(R.color.tabBarColor));
             setTvDrawable(textView, R.mipmap.price_up_pressed);
         } else {
             textView.setTextColor(getResources().getColor(R.color.price_textColor_pressed));

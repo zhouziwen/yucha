@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 import com.android.volley.VolleyError;
@@ -24,7 +25,7 @@ import com.example.hnTea.ui.BaseFragment;
 import com.example.hnTea.ui.home.adapter.HomeAdapter;
 import com.example.hnTea.ui.home.shop.BusinessYellowPagesFragment;
 import com.example.hnTea.ui.home.shop.ShopFragment;
-import com.example.hnTea.ui.home.shop.ShoppingFragment;
+import com.example.hnTea.ui.price.SearchPriceFragment;
 import com.example.hnTea.utils.ShowFragmentUtils;
 import com.example.hnTea.utils.toast.ApToast;
 
@@ -35,13 +36,14 @@ public class HomeFragment extends BaseFragment {
     private HomePresenter mHomePresenter;
     private RecyclerView mRecyclerView;
     private HomeAdapter mAdapter;
-    private ShoppingFragment mShoppingFragment;
+    private TextView queryTv;
     private HomeListDetail_Fg homeListDetail_fg;
     private BusinessYellowPagesFragment mBusinessYellowPagesFragment;
     private List<MainShop_Category> mMainShop_categories;
     private List<MainShop_ShangJia> mMainShop_shangJias;
     private ShopFragment mShopFragment;
     private SwipeRefreshLayout mSwipeRefreshLayout;
+    private SearchPriceFragment mSearchPriceFragment;
 
     @Override
     public void onResume() {
@@ -59,6 +61,7 @@ public class HomeFragment extends BaseFragment {
     protected void initView(View view) {
         super.initView(view);
         mHomePresenter = new HomePresenter(null);
+        queryTv = mFindViewUtils.findViewById(R.id.query);
         mRecyclerView = mFindViewUtils.findViewById(R.id.home_listView);
         mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_refresh);
         mSwipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.ycMainColor), Color.BLUE);
@@ -76,6 +79,10 @@ public class HomeFragment extends BaseFragment {
     @Override
     protected void setListener() {
         super.setListener();
+        queryTv.setOnClickListener(v -> {
+            //顶部跳转搜索页面
+            pushSearchDetail();
+        });
 //        mAppTitleBar.getAction().setOnClickListener(v -> {
 //            //跳转购物车
 //            if (mShoppingFragment == null) {
@@ -215,5 +222,15 @@ public class HomeFragment extends BaseFragment {
                     FragmentTags.FRAGMENT_HOME_LIST_DETAIL,
                     bundle, true);
         }
+    }
+
+    private void pushSearchDetail() {
+        if (mSearchPriceFragment == null) {
+            mSearchPriceFragment = new SearchPriceFragment();
+        }
+        ShowFragmentUtils.showFragment(getActivity(),
+                mSearchPriceFragment.getClass(),
+                "searchPrice",
+                null, true);
     }
 }

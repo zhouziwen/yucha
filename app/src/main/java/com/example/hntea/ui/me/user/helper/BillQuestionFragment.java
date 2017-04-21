@@ -6,17 +6,26 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 
+import com.android.volley.VolleyError;
 import com.example.hnTea.R;
+import com.example.hnTea.https.BaseUrl;
+import com.example.hnTea.mvpmodel.user.bean.UserhelperModel;
+import com.example.hnTea.mvppresenter.user.IViewUser;
+import com.example.hnTea.mvppresenter.user.UserHelperPresenter;
 import com.example.hnTea.ui.BaseFragment;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class BillQuestionFragment extends BaseFragment {
-    private TextView mTextView;
-
+    private UserHelperPresenter mUserHelperPresenter;
+    private WebView mWebView;
     @Override
     public void onResume() {
         super.onResume();
@@ -32,8 +41,17 @@ public class BillQuestionFragment extends BaseFragment {
     @Override
     protected void initView(View view) {
         super.initView(view);
-        mAppTitleBar.getTitle().setText("发票制度");
-        mTextView = mFindViewUtils.findViewById(R.id.billQuestion_tv);
+        mUserHelperPresenter=new UserHelperPresenter(null);
+        mAppTitleBar.getTitle().setText("");
+        mWebView = mFindViewUtils.findViewById(R.id.common_question_webView);
+        WebSettings webSettings = mWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setCacheMode(WebSettings.LOAD_DEFAULT);
+        webSettings.setSupportZoom(true);
+//        webSettings.setTextSize(WebSettings.TextSize.SMALLER);
+        webSettings.setBuiltInZoomControls(false);
+        mWebView.setWebViewClient(new WebViewClient());
+        mWebView.setWebChromeClient(new WebChromeClient());
     }
 
     @Override
@@ -44,14 +62,30 @@ public class BillQuestionFragment extends BaseFragment {
     @Override
     protected void setData() {
         super.setData();
-        mTextView.setText(" 发票分为普通发票和增值税专用发票二种\n" +
-                "\n" +
-                "1、首次开具增值税专用发票的客户，需要提供加盖公章的营业执照副本、税务登记证副本、一般纳税人资格证书、银行开户许可证复印件，由您的客户经理负责提交审核；\n" +
-                "\n" +
-                "2、发票需在货物送达客户并完成签收后开具；\n" +
-                "\n" +
-                "3、发票信息应与定单保持一致。货物名称与实物一致，发票金额不能高于订单金额；\n" +
-                "\n" +
-                "4、客户收到发票后如发现票据抬头、内容或金额错误，请在自开票日期起30日内联系您的客户经理，由客户经理为您安排办理换发票事宜。\n");
+        mUserHelperPresenter.getUserHelperData("bill", new IViewUser<UserhelperModel>() {
+            @Override
+            public void onSuccess(UserhelperModel response) {
+                mAppTitleBar.getTitle().setText(response.getTitle());
+                mWebView.loadDataWithBaseURL(BaseUrl.getBaseUrl(), response.getContent(), "text/html", "utf-8", null);
+                hiddenLoading();
+            }
+
+            @Override
+            public void onPhpFail(String var) {
+                hiddenLoading();
+                showAlertWithMsg(var);
+            }
+
+            @Override
+            public void onStart(String var) {
+                showLoading();
+            }
+
+            @Override
+            public void onFail(VolleyError volleyError) {
+                hiddenLoading();
+                showAlertWithMsg("请检查网络");
+            }
+        });
     }
 }

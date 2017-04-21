@@ -93,7 +93,7 @@ public class XPriceSingle_Fg extends BaseFragment {
                         "【" + item.getInquiry_sn() + "】  " + item.getProduct_name())
                         .setText(R.id.XPrice_listItem_time, item.getTime().isEmpty()?"时间":item.getTime())
                         .setText(R.id.XPrice_listItem_location, item.getBrand().isEmpty()?"品牌":item.getBrand())
-                        .setText(R.id.XPrice_listItem_type, item.getQuantity().isEmpty()?"0":String.format("%s%s",item.getQuantity(),item.getUnit()));
+                        .setText(R.id.XPrice_listItem_type, item.getQuantity().isEmpty()?"重量":String.format("%s%s",item.getQuantity(),item.getUnit()));
             }
 
             @Override

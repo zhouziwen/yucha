@@ -160,7 +160,7 @@
             android:id="@+id/register_tv_userConfig"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="《电力电用户协议》"
+            android:text="《豫茶用户注册协议》"
             android:textColor="@color/ycMainColor"
             android:layout_marginLeft="5dp"
             />

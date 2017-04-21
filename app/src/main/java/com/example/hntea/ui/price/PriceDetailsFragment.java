@@ -276,10 +276,10 @@ public class PriceDetailsFragment extends BaseFragment {
     private List<PriceDetailModel> footList(X_SingleDetailModel data) {
         List<PriceDetailModel> footList = new ArrayList<>();
         footList.add(new PriceDetailModel("发布时间：", data.getPublishTime()));
-        footList.add(new PriceDetailModel("产品系列：", data.getProduct_series()));
-        footList.add(new PriceDetailModel("产品型号：", data.getProduct_model()));
-        footList.add(new PriceDetailModel("产品参数：", data.getParam()));
-        footList.add(new PriceDetailModel("产品单位：", data.getUnit()));
+        footList.add(new PriceDetailModel("品类：", data.getProduct_series()));
+        footList.add(new PriceDetailModel("品名：", data.getProduct_model()));
+        footList.add(new PriceDetailModel("等级：", data.getParam()));
+        footList.add(new PriceDetailModel("年份：", data.getUnit()));
         return footList;
     }
 
@@ -378,7 +378,7 @@ public class PriceDetailsFragment extends BaseFragment {
         List<PriceDetailModel> list = new ArrayList<>();
         list.add(new PriceDetailModel("询价单号:", data.getInquiry_sn().isEmpty()?"无":data.getInquiry_sn()));
         list.add(new PriceDetailModel("品牌:", data.getBrand().isEmpty()?"无":data.getBrand()));
-        list.add(new PriceDetailModel("需求数量:", data.getQuantity().isEmpty()?"无":data.getQuantity()+"台"));
+        list.add(new PriceDetailModel("重量:", data.getQuantity().isEmpty()?"无":data.getQuantity()+"台"));
         list.add(new PriceDetailModel("质保期:",data.getWarranty().isEmpty()?"无": String.format("%s%s",data.getWarranty(),"个月")));
         list.add(new PriceDetailModel("交货时间:", data.getReceive_cycle().isEmpty()?"无":data.getReceive_cycle()));
         list.add(new PriceDetailModel("报价截止日期:", data.getEnd_time().isEmpty()?"无":data.getEnd_time()));

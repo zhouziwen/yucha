@@ -24,8 +24,6 @@ import butterknife.ButterKnife;
 public class HnTeaFragment extends BaseFragment {
     @BindView(R.id.version_code)
     TextView mVersionCode;
-    private WebView mWebView;
-    private RelativeLayout mRelativeLayout;
 
     @Override
     public void onResume() {
@@ -44,16 +42,13 @@ public class HnTeaFragment extends BaseFragment {
     @Override
     protected void initView(View view) {
         super.initView(view);
-        mWebView = mFindViewUtils.findViewById(R.id.helper_webView);
-        mRelativeLayout = mFindViewUtils.findViewById(R.id.helper_layout);
-        String html = getArguments().getString("helper_html");
-        String title = getArguments().getString("helper_title");
-        mAppTitleBar.getTitle().setText(title);
-        if (!title.equals("关于我们")) {
-            mRelativeLayout.setVisibility(View.GONE);
-            mWebView.setVisibility(View.VISIBLE);
-            mWebView.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
-        }
+//        String html = getArguments().getString("helper_html");
+        mAppTitleBar.getTitle().setText("关于我们");
+//        if (!title.equals("关于我们")) {
+//            mRelativeLayout.setVisibility(View.GONE);
+//            mWebView.setVisibility(View.VISIBLE);
+//            mWebView.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+//        }
         mVersionCode.setText(getAppInfo());
     }
     private String getAppInfo() {

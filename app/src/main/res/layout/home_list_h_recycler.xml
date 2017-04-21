@@ -19,7 +19,7 @@
         android:layout_below="@+id/home_listHeader_utilView1"
         android:gravity="center"
         android:layout_marginTop="10dp"
-        android:text="#热门产品"
+        android:text="热门商品"
         android:textColor="@color/price_textColor_pressed"
         android:textSize="18sp"
         />
@@ -33,7 +33,7 @@
         android:layout_marginTop="10dp"
         android:background="@color/white"
         android:gravity="center"
-        android:text="#入驻商家"
+        android:text="入驻商家"
         android:textColor="@color/price_textColor_pressed"
         android:textSize="18sp"
         />
@@ -55,7 +55,7 @@
         android:layout_marginTop="10dp"
         android:background="@color/white"
         android:gravity="center"
-        android:text="#产品分类"
+        android:text="产品分类"
         android:textColor="@color/price_textColor_pressed"
         android:textSize="18sp"
         />

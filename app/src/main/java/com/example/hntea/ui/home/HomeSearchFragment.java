@@ -57,12 +57,9 @@ public class HomeSearchFragment extends BaseFragment {
     @Override
     protected void setListener() {
         super.setListener();
-        backTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //返回键
-                popSelf();
-            }
+        backTv.setOnClickListener(v -> {
+            //返回键
+            popSelf();
         });
     }
 

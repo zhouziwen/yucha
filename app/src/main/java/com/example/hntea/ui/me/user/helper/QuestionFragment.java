@@ -6,17 +6,26 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 
+import com.android.volley.VolleyError;
 import com.example.hnTea.R;
+import com.example.hnTea.https.BaseUrl;
+import com.example.hnTea.mvpmodel.user.bean.UserhelperModel;
+import com.example.hnTea.mvppresenter.user.IViewUser;
+import com.example.hnTea.mvppresenter.user.UserHelperPresenter;
 import com.example.hnTea.ui.BaseFragment;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class QuestionFragment extends BaseFragment {
-    private TextView mTextView;
-
+    private UserHelperPresenter mUserHelperPresenter;
+    private WebView mWebView;
     @Override
     public void onResume() {
         super.onResume();
@@ -32,8 +41,18 @@ public class QuestionFragment extends BaseFragment {
     @Override
     protected void initView(View view) {
         super.initView(view);
-        mAppTitleBar.getTitle().setText("常见问题");
-        mTextView =mFindViewUtils.findViewById(R.id.question_tv);
+        mUserHelperPresenter=new UserHelperPresenter(null);
+        mAppTitleBar.getTitle().setText("");
+        mWebView = mFindViewUtils.findViewById(R.id.common_question_webView);
+        WebSettings webSettings = mWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setCacheMode(WebSettings.LOAD_DEFAULT);
+        webSettings.setSupportZoom(true);
+//        webSettings.setTextSize(WebSettings.TextSize.SMALLER);
+        webSettings.setBuiltInZoomControls(false);
+        mWebView.setWebViewClient(new WebViewClient());
+        mWebView.setWebChromeClient(new WebChromeClient());
+
     }
 
     @Override
@@ -44,8 +63,30 @@ public class QuestionFragment extends BaseFragment {
     @Override
     protected void setData() {
         super.setData();
-        mTextView.setText("\n" +
-                "       如在电力电平台遇到任何问题，可直接联系平台客服进行咨询，或者拨打4006-831-536，电力电工作人员将竭诚为您服务。\n" +
-                "       问题反馈可发送邮件至dianlidian@831536.net。 ");
+        mUserHelperPresenter.getUserHelperData("help", new IViewUser<UserhelperModel>() {
+            @Override
+            public void onSuccess(UserhelperModel response) {
+                mAppTitleBar.getTitle().setText(response.getTitle());
+                mWebView.loadDataWithBaseURL(BaseUrl.getBaseUrl(), response.getContent(), "text/html", "utf-8", null);
+                hiddenLoading();
+            }
+
+            @Override
+            public void onPhpFail(String var) {
+                hiddenLoading();
+                showAlertWithMsg(var);
+            }
+
+            @Override
+            public void onStart(String var) {
+                showLoading();
+            }
+
+            @Override
+            public void onFail(VolleyError volleyError) {
+                hiddenLoading();
+                showAlertWithMsg("请检查网络");
+            }
+        });
     }
 }

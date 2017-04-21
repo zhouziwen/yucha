@@ -8,19 +8,14 @@
     <com.example.hnTea.widget.AppTitleBar
         android:id="@+id/app_title_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content">
+    </com.example.hnTea.widget.AppTitleBar>
 
-    <ScrollView
+    <WebView
+        android:id="@+id/common_question_webView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/msg_tv"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="20dp"
-            />
-
-    </ScrollView>
+    </WebView>
 
 </LinearLayout>

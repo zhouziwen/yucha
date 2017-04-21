@@ -25,8 +25,7 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class HelperFragment extends BaseFragment {
-    private UserConfigPresenter mUserConfigPresenter;
-    private List<HelperModel> mData;
+    private List<String> mData;
     private ListView mListView;
     private CommonAdapter<String> mAdapter;
     private HnTeaFragment mDlDFragment;
@@ -49,9 +48,13 @@ public class HelperFragment extends BaseFragment {
     @Override
     protected void initView(View view) {
         super.initView(view);
-        mUserConfigPresenter = new UserConfigPresenter(null);
         mAppTitleBar.getTitle().setText("帮助中心");
         mListView = mFindViewUtils.findViewById(R.id.helper_listView);
+        mData=new ArrayList<>();
+        mData.add("常见问题");
+        mData.add("发票制度");
+        mData.add("关于我们");
+        mData.add("用户协议");
     }
 
     @Override
@@ -63,11 +66,10 @@ public class HelperFragment extends BaseFragment {
     protected void setData() {
         super.setData();
         setListViewBody();
-        setListViewData();
     }
 
     private void setListViewBody() {
-        mAdapter = new CommonAdapter<String>(getContext(), null, R.layout.user_info_list_item) {
+        mAdapter = new CommonAdapter<String>(getContext(), mData, R.layout.user_info_list_item) {
             @Override
             protected void setListeners(BaseViewHolder holder, View view, int position) {
                 holder.setOnClickListener(R.id.userInfo_layout);
@@ -85,87 +87,46 @@ public class HelperFragment extends BaseFragment {
 
             @Override
             public void onClickBack(int position, View view, BaseViewHolder holder) {
-                if (mDlDFragment == null) {
-                    mDlDFragment = new HnTeaFragment();
+                switch (position) {
+                    case 0:
+                        //常见问题
+                        if (mQuestionFragment == null) {
+                            mQuestionFragment = new QuestionFragment();
+                        }
+                        ShowFragmentUtils.showFragment(getActivity(),
+                                mQuestionFragment.getClass(),
+                                "question", null, true);
+                        break;
+                    case 1:
+                        //发票制度
+                        if (mBillQuestionFragment == null) {
+                            mBillQuestionFragment = new BillQuestionFragment();
+                        }
+                        ShowFragmentUtils.showFragment(getActivity(),
+                                mBillQuestionFragment.getClass(),
+                                "bill_question", null, true);
+                        break;
+                    case 2:
+                        //关于我们
+                        if (mDlDFragment == null) {
+                            mDlDFragment = new HnTeaFragment();
+                        }
+                        ShowFragmentUtils.showFragment(getActivity(),
+                                mDlDFragment.getClass(),
+                                "dld", null, true);
+                        break;
+                    case 3:
+                        //用户协议
+                        if (mMsgFragment == null) {
+                            mMsgFragment = new MsgFragment();
+                        }
+                        ShowFragmentUtils.showFragment(getActivity(),
+                                mMsgFragment.getClass(),
+                                "msg", null, true);
+                        break;
                 }
-                Bundle bundle =new Bundle();
-                bundle.putString("helper_title",mData.get(position).getTitle());
-                bundle.putString("helper_html",mData.get(position).getContent());
-                ShowFragmentUtils.showFragment(getActivity(),
-                        mDlDFragment.getClass(),
-                        "dld", bundle, true);
-//                switch (position) {
-//                    case 0:
-//                        //常见问题
-//                        if (mQuestionFragment == null) {
-//                            mQuestionFragment = new QuestionFragment();
-//                        }
-//                        ShowFragmentUtils.showFragment(getActivity(),
-//                                mQuestionFragment.getClass(),
-//                                "question", null, true);
-//                        break;
-//                    case 1:
-//                        //发票制度
-//                        if (mBillQuestionFragment == null) {
-//                            mBillQuestionFragment = new BillQuestionFragment();
-//                        }
-//                        ShowFragmentUtils.showFragment(getActivity(),
-//                                mBillQuestionFragment.getClass(),
-//                                "bill_question", null, true);
-//                        break;
-//                    case 2:
-//                        //关于我们
-//                        if (mDlDFragment == null) {
-//                            mDlDFragment = new HnTeaFragment();
-//                        }
-//                        ShowFragmentUtils.showFragment(getActivity(),
-//                                mDlDFragment.getClass(),
-//                                "dld", null, true);
-//                        break;
-//                    case 3:
-//                        //用户协议
-//                        if (mMsgFragment == null) {
-//                            mMsgFragment = new MsgFragment();
-//                        }
-//                        ShowFragmentUtils.showFragment(getActivity(),
-//                                mMsgFragment.getClass(),
-//                                "msg", null, true);
-//                        break;
-//                }
             }
         };
         mListView.setAdapter(mAdapter);
-    }
-
-    private void setListViewData() {
-        mUserConfigPresenter.getHelperMsg(new IViewUser<List<HelperModel>>() {
-            @Override
-            public void onSuccess(List<HelperModel> response) {
-                hiddenLoading();
-                mData=response;
-                List<String> titles =new ArrayList<String>();
-                for (HelperModel model:response) {
-                    titles.add(model.getTitle());
-                }
-                mAdapter.update(titles);
-            }
-
-            @Override
-            public void onPhpFail(String var) {
-                hiddenLoading();
-                showAlertWithMsg(var);
-            }
-
-            @Override
-            public void onStart(String var) {
-                showLoading();
-            }
-
-            @Override
-            public void onFail(VolleyError volleyError) {
-                hiddenLoading();
-                showAlertWithMsg("请检查网络");
-            }
-        });
     }
 }
