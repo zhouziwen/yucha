@@ -53,11 +53,11 @@ public class PopFragment extends BaseFragment {
         });
         image2.setOnClickListener(v -> {
             //电话
-            showDialogWithMsg("是否拨打客服电话4006-831536？");
+            showDialogWithMsg("是否拨打客服电话0371-86078866？");
             mDialog.setLeftButtonListener(() -> mDialog.dismiss());
             mDialog.setRightButtonListener(() -> {
                 mDialog.dismiss();
-                String number ="400-628-6662";
+                String number ="0371-86078866";
                 Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+number));
                 startActivity(intent);
             });

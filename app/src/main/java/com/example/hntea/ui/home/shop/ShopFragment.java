@@ -203,13 +203,13 @@ public class ShopFragment extends BaseFragment implements View.OnClickListener {
                 break;
             case R.id.shop_service:
                 //客服
-                showDialogWithMsg("是否拨打客服电话4006-831536？");
+                showDialogWithMsg("是否拨打客服电话0371-86078866？");
                 mDialog.setLeftButtonListener(() -> mDialog.dismiss());
                 mDialog.setRightButtonListener(new BaseDialog.RightListener() {
                     @Override
                     public void onRightListener() {
                         mDialog.dismiss();
-                        String number = "4006-831536";
+                        String number = "0371-86078866";
                         Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + number));
                         startActivity(intent);
                     }
