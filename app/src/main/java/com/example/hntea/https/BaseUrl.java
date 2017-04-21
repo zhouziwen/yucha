@@ -21,7 +21,7 @@ public class BaseUrl {
 
 
     public static String getUMShareApUrl(){
-        return "http://www.51yucha.com";
+        return "http://www.51yucha.com/site/downLoad.html";
 //        return "https://www.dianlidian.com/site/downLoad.html";
     }
 

@@ -295,8 +295,8 @@ public class MeFragment extends BaseFragment {
                                 getContext(),
                                 R.mipmap.ycicon,
                                 BaseUrl.getUMShareApUrl(),
-                                "电力电APP下载",
-                                "电力电 - 电器行业询价交易平台，为您提供一站式采购服务。") {
+                                "豫茶APP下载",
+                                "豫茶-茶叶行业询价交易平台,为您提供一站式采购服务。") {
                         };
                         shareUtils.openShareDialog();
                         break;
