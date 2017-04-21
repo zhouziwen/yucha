@@ -160,7 +160,7 @@ public abstract class HomeAdapter extends MultiItemTypeAdapter<HomeBean> {
                         @Override
                         public void bindData(BaseRecyclerViewHolder holder, final int position, MainShop_HotShop item) {
                             holder.setText(R.id.home_HListView_title, item.getGoods_name())
-                                    .setText(R.id.home_HListView_price, item.getShop_price());
+                                    .setText(R.id.home_HListView_price, "¥"+item.getShop_price());
                             ImageView img = holder.getView(R.id.home_HListView_image);
                             String url = item.getGoods_thumb();
                             Glide.with(context)

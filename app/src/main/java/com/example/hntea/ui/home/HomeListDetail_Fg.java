@@ -197,7 +197,7 @@ public class HomeListDetail_Fg extends BaseFragment implements OnPopWinDisMisBac
                 holder.setText(R.id.home_listDetail_listItem_title, item.getGoods_name())
                         .setText(R.id.home_listDetail_listItem_type, item.getCompany_name())
                         .setText(R.id.home_listDetail_listItem_location, "已销" + item.getSell_num() + "件")
-                        .setText(R.id.home_listDetail_listItem_price, item.getShop_price());
+                        .setText(R.id.home_listDetail_listItem_price, "¥"+item.getShop_price());
                 ImageView imageView = holder.getView(R.id.home_listDetail_listItem_image);
                 Glide.with(getContext())
                         .load(item.getGoods_thumb())

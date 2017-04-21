@@ -140,7 +140,7 @@ public class ShopMsgFragment extends BaseFragment {
             UMShareUtils shareUtils = new UMShareUtils(getActivity(),
                     getContext(),
                     mData.getGallery().get(0).getImg_url()==null?
-                            "www.dianlidian.com":mData.getGallery().get(0).getImg_url(),
+                            "www.51yucha.com":mData.getGallery().get(0).getImg_url(),
                     shareUrl,
                     mData.getInfo().getGoods_name(),
                     mData.getInfo().getGoods_desc()) {
@@ -206,7 +206,7 @@ public class ShopMsgFragment extends BaseFragment {
                         canPay2 = true;
                         shopNum.setText("库存:" + mData.getNums().get(position).getProduct_number());
                         mProject_id = mData.getNums().get(position).getProduct_id();
-                        price.setText("" + mData.getNums().get(position).getProduct_price());
+                        price.setText("¥" + mData.getNums().get(position).getProduct_price());
                     }
                 };
                 mActionToPay.setOnClickListener(v -> {
@@ -407,10 +407,11 @@ public class ShopMsgFragment extends BaseFragment {
                         .diskCacheStrategy(DiskCacheStrategy.RESULT)
                         .into(imageView);
                 holder.setText(R.id.home_HListView_title, item.getGoods_name())
-                        .setText(R.id.home_HListView_price, item.getShop_price());
+                        .setText(R.id.home_HListView_price, "¥"+item.getShop_price());
             }
         };
         mRecyclerView.setAdapter(mRecyclerAdapter);
+
         //设置布局管理器
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         //设置默认的动画 事实证明 看不出什么动画效果

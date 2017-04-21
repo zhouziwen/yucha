@@ -279,7 +279,7 @@ public class PriceDetailsFragment extends BaseFragment {
         footList.add(new PriceDetailModel("品类：", data.getProduct_series()));
         footList.add(new PriceDetailModel("品名：", data.getProduct_model()));
         footList.add(new PriceDetailModel("等级：", data.getParam()));
-        footList.add(new PriceDetailModel("年份：", data.getUnit()));
+        footList.add(new PriceDetailModel("年份：", data.getWarranty()));
         return footList;
     }
 
@@ -362,14 +362,11 @@ public class PriceDetailsFragment extends BaseFragment {
     //我要报价的弹框
     private void showDialog(){
         Dialog dialog = new AlertDialog.Builder(getActivity())
-                .setIcon(android.R.drawable.btn_star)
+                .setIcon(android.R.drawable.arrow_down_float)
                 .setTitle("提示：")
-                .setMessage("移动端暂无法报价，需报价请上PC端，电力电网址www.dianlidian.com")
-                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
+                .setMessage("移动端暂无法报价，需报价请上PC端，豫茶网址www.51yucha.com")
+                .setPositiveButton("确定", (dialog1, which) -> {
 
-                    }
                 }).create();
         dialog.show();
     }
@@ -378,7 +375,7 @@ public class PriceDetailsFragment extends BaseFragment {
         List<PriceDetailModel> list = new ArrayList<>();
         list.add(new PriceDetailModel("询价单号:", data.getInquiry_sn().isEmpty()?"无":data.getInquiry_sn()));
         list.add(new PriceDetailModel("品牌:", data.getBrand().isEmpty()?"无":data.getBrand()));
-        list.add(new PriceDetailModel("重量:", data.getQuantity().isEmpty()?"无":data.getQuantity()+"台"));
+        list.add(new PriceDetailModel("重量:", data.getQuantity().isEmpty()?"无":data.getQuantity()+data.getUnit()));
         list.add(new PriceDetailModel("质保期:",data.getWarranty().isEmpty()?"无": String.format("%s%s",data.getWarranty(),"个月")));
         list.add(new PriceDetailModel("交货时间:", data.getReceive_cycle().isEmpty()?"无":data.getReceive_cycle()));
         list.add(new PriceDetailModel("报价截止日期:", data.getEnd_time().isEmpty()?"无":data.getEnd_time()));

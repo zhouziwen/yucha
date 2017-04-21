@@ -311,12 +311,12 @@ public abstract class ChoseTypeAdapter extends BaseAdapter {
                 textView.setTextColor(Color.parseColor("#666666"));
                 break;
             case 2:
-                textView.setBackgroundResource(R.drawable.chose_item_selector);
+                textView.setBackgroundResource(R.drawable.choose_item_selector);
                 textView.setTextColor(Color.parseColor("#FFFFFF"));
                 break;
             case 3:
                 textView.setTextColor(Color.parseColor("#bfc2c2"));
-                textView.setBackgroundResource(R.drawable.chose_item_nomal);
+                textView.setBackgroundResource(R.drawable.choose_item_notclick);
                 break;
         }
     }

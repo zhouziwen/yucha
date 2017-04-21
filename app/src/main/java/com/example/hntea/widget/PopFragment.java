@@ -1,6 +1,7 @@
 package com.example.hnTea.widget;
 
 import android.content.Intent;
+import android.gesture.Prediction;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,8 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.hnTea.MyApplication;
 import com.example.hnTea.R;
 import com.example.hnTea.apcontains.FragmentTags;
+import com.example.hnTea.manager.PreManager;
 import com.example.hnTea.ui.BaseFragment;
 import com.example.hnTea.ui.home.shop.ShoppingFragment;
 import com.example.hnTea.utils.ShowFragmentUtils;
