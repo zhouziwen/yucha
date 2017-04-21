@@ -106,7 +106,7 @@ public class ShopCarChildAdapter extends RecyclerView.Adapter<ShopCarChildAdapte
         mHomePresenter = new HomePresenter(null);
         final ShopCarListModel.GoodsBean goodsBean = mGoodsBeanList.get(position);
         final int childposition = position;
-        Glide.with(mContext).load(mGoodsBeanList.get(position).getGoods_img()).placeholder(R.mipmap.pic_banner_moren).into(holder.getIconImageView());
+        Glide.with(mContext).load(mGoodsBeanList.get(position).getGoods_img()).placeholder(R.mipmap.pic_fenlei_moren).into(holder.getIconImageView());
 //        holder.getIconImageView().setImageResource( mGoodsBeanList.get(position).getPic());
         if (mGoodsBeanList.get(position).getStatus() == 1) {
             holder.mCheckBox.setChecked(true);

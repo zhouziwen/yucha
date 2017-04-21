@@ -16,7 +16,7 @@
         android:id="@+id/shop_car_goods_icon"
         android:layout_width="110dp"
         android:layout_height="115dp"
-        android:src="@mipmap/icon"
+        android:src="@mipmap/pic_fenlei_moren"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/shop_car_cicle"/>
     <TextView

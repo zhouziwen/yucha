@@ -105,7 +105,7 @@
             android:textSize="13sp"
             app:pstsDividerColor="@android:color/transparent"
             app:pstsDividerPaddingTopBottom="8dp"
-            app:pstsIndicatorColor="@color/price_viewColor"
+            app:pstsIndicatorColor="@color/ycMainColor"
             app:pstsIndicatorHeight="2dp"
             app:pstsScaleZoomMax="0.1"
             app:pstsShouldExpand="true"
