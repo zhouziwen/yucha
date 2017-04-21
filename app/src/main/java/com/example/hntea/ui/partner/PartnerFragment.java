@@ -307,7 +307,7 @@ public class PartnerFragment extends BaseFragment {
             final ImageView img = new ImageView(getContext());
             img.setScaleType(ImageView.ScaleType.FIT_XY);
             if (i == 0) {
-                img.setImageResource(R.mipmap.bannerjoinus);
+                img.setImageResource(R.mipmap.banner_joinus);
             } else if (i == 1) {
                 img.setImageResource(R.mipmap.partnerbanner4);
             } else if (i == 2) {

@@ -5,7 +5,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +31,8 @@ import com.example.hnTea.ui.home.shop.ShopFragment;
 import com.example.hnTea.utils.ActionSheet;
 import com.example.hnTea.utils.DisPlayUtils;
 import com.example.hnTea.utils.ShowFragmentUtils;
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +42,8 @@ import java.util.List;
  */
 public class HomeListDetail_Fg extends BaseFragment implements OnPopWinDisMisBack {
     private HomePresenter mHomePresenter;
-    private ListView mListView, mMoreList;
+    private PullToRefreshListView mListView;
+    private ListView mMoreList;
     private CommonAdapter<CategoryGoodsList.Goods> mListAdapter;
     private CommonAdapter<CategoryGoodsList.Category> mCategoryCommonAdapter;
     private CommonAdapter<CategoryGoodsList.SonCategory> mSonCategoryCommonAdapter;
@@ -64,6 +66,10 @@ public class HomeListDetail_Fg extends BaseFragment implements OnPopWinDisMisBac
     private int leftSelector = 0;
     //用来保存 每个搜索过后的值 方便排序时掉用
     private String selectorProject = "";
+    //当前list的页数 cid(底部楼层的索引值)不为空时
+    int page = 1;
+    //cid为空时 nav跳转过来的
+    int page1 = 1;
 
     @Override
     public void onResume() {
@@ -84,7 +90,7 @@ public class HomeListDetail_Fg extends BaseFragment implements OnPopWinDisMisBac
         cId = getArguments().getString("fastEntrance");
         cateGory = getArguments().getString("category");
         if (cId.equals("")) {
-            search(cateGory);
+            search(cateGory,1);
         }
         parentView = mFindViewUtils.findViewById(R.id.homeListDetail_view);
         mListView = mFindViewUtils.findViewById(R.id.homeListDetail_ListView);
@@ -126,6 +132,26 @@ public class HomeListDetail_Fg extends BaseFragment implements OnPopWinDisMisBac
             //返回键
             popSelf();
         });
+        mListView.setMode(PullToRefreshBase.Mode.BOTH);
+        mListView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
+            @Override
+            public void onPullDownToRefresh(PullToRefreshBase<ListView> pullToRefreshBase) {
+                //下拉刷新
+                setListViewData("all", styleId == null ? "" : styleId, cId, "", "1", 1);
+            }
+
+            @Override
+            public void onPullUpToRefresh(PullToRefreshBase<ListView> pullToRefreshBase) {
+                //加载更多
+                if (cId.equals("")) {
+                    page1++;
+                    search(cateGory,2);
+                } else {
+                    page++;
+                    setListViewData("all", styleId == null ? "" : styleId, cId, "", "" + page, 2);
+                }
+            }
+        });
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -134,11 +160,11 @@ public class HomeListDetail_Fg extends BaseFragment implements OnPopWinDisMisBac
         mSale.setText(cateGory);
         super.setData();
         //详情页下面List
-        setListViewData("all", styleId == null ? "" : styleId, cId, "", "1");
+        setListViewData("all", styleId == null ? "" : styleId, cId, "", "" + page, 1);
         setCategoryGoodsListData();
         searchEdTx.setOnEditorActionListener((v, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                search("");
+                search("",1);
                 selectorProject = getText(searchEdTx);
                 styleId = "";
             }
@@ -146,7 +172,7 @@ public class HomeListDetail_Fg extends BaseFragment implements OnPopWinDisMisBac
         });
     }
 
-    private void search(String text) {
+    private void search(String text,int type) {
         if (text.length() == 0) {
             text = getText(searchEdTx);
         }
@@ -154,11 +180,18 @@ public class HomeListDetail_Fg extends BaseFragment implements OnPopWinDisMisBac
             text = selectorProject;
         }
         mHomePresenter.getProductSearch(text,
-                styleId == null ? "" : styleId, "1",
+                styleId == null ? "" : styleId, "" + page1,
                 new IViewHome<ProduceSearchModel>() {
                     @Override
                     public void onSuccess(ProduceSearchModel data) {
-                        mListAdapter.update(data.getGoodsList());
+                        mListView.onRefreshComplete();
+                        if (type == 1){
+                            mListAdapter.update(data.getGoodsList());
+                        }else {
+                            for (CategoryGoodsList.Goods good:data.getGoodsList()) {
+                                mListAdapter.append(good);
+                            }
+                        }
                     }
 
                     @Override
@@ -197,7 +230,7 @@ public class HomeListDetail_Fg extends BaseFragment implements OnPopWinDisMisBac
                 holder.setText(R.id.home_listDetail_listItem_title, item.getGoods_name())
                         .setText(R.id.home_listDetail_listItem_type, item.getCompany_name())
                         .setText(R.id.home_listDetail_listItem_location, "已销" + item.getSell_num() + "件")
-                        .setText(R.id.home_listDetail_listItem_price, "¥"+item.getShop_price());
+                        .setText(R.id.home_listDetail_listItem_price, "¥" + item.getShop_price());
                 ImageView imageView = holder.getView(R.id.home_listDetail_listItem_image);
                 Glide.with(getContext())
                         .load(item.getGoods_thumb())
@@ -221,16 +254,31 @@ public class HomeListDetail_Fg extends BaseFragment implements OnPopWinDisMisBac
         mListView.setAdapter(mListAdapter);
     }
 
-    private void setListViewData(String scId, String styleId, String cId, String brandId, String page) {
+    //1代表updata 2代表append
+    private void setListViewData(String scId, String styleId, String cId, String brandId, String page, int type) {
         mHomePresenter.getCategoryGoodsList(scId, styleId, cId, brandId, page, new IViewHome<CategoryGoodsList>() {
             @Override
             public void onSuccess(CategoryGoodsList data) {
-                mData = data;
-                if (!cId.equals("")){
-                    mListAdapter.update(mData.getGoodsList());
+                mListView.onRefreshComplete();
+                if (type == 1) {
+                    //updata
+                    mData = data;
+                    if (!cId.equals("")) {
+                        mListAdapter.update(mData.getGoodsList());
+                    }
+                    mCategories = mData.getCategoryList();
+                    mGoodses = mData.getGoodsList();
+                } else {
+                    //append
+                    if (mData.getGoodsList().size() == 0) {
+                        showAlertWithMsg("暂无更多");
+                    } else {
+                        for (CategoryGoodsList.Goods good : mData.getGoodsList()) {
+                            mListAdapter.append(good);
+                            showAlertWithMsg("已加载");
+                        }
+                    }
                 }
-                mCategories = mData.getCategoryList();
-                mGoodses = mData.getGoodsList();
             }
 
             @Override
@@ -342,10 +390,10 @@ public class HomeListDetail_Fg extends BaseFragment implements OnPopWinDisMisBac
                         //销量排序
                         if (position == 0) {
                             styleId = "3";
-                            search("");
+                            search("",1);
                         } else {
                             styleId = "4";
-                            search("");
+                            search("",1);
                         }
                         mActionSheet.dismissWindow();
                         break;
@@ -353,10 +401,10 @@ public class HomeListDetail_Fg extends BaseFragment implements OnPopWinDisMisBac
                         //价格排序
                         if (position == 0) {
                             styleId = "1";
-                            search("");
+                            search("",1);
                         } else {
                             styleId = "2";
-                            search("");
+                            search("",1);
                         }
                         mActionSheet.dismissWindow();
                         break;
@@ -398,7 +446,7 @@ public class HomeListDetail_Fg extends BaseFragment implements OnPopWinDisMisBac
                 leftSelector = position;
                 mSale.setText(categoryList.get(position).getCat_name());
                 mCategoryCommonAdapter.notifyDataSetChanged();
-                search(categoryList.get(position).getCat_name());
+                search(categoryList.get(position).getCat_name(),1);
                 selectorProject = categoryList.get(position).getCat_name();
             }
         };
@@ -428,7 +476,7 @@ public class HomeListDetail_Fg extends BaseFragment implements OnPopWinDisMisBac
             @Override
             public void onClickBack(int position, View view, BaseViewHolder holder) {
                 mActionSheetMore.dismissWindow();
-                search(sonCategoryList.get(position).getSon_cat_name());
+                search(sonCategoryList.get(position).getSon_cat_name(),1);
                 selectorProject = sonCategoryList.get(position).getSon_cat_name();
             }
         };

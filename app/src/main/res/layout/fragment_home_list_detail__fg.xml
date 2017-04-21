@@ -163,10 +163,10 @@
         android:layout_below="@+id/list_detail_chose"
         />
 
-    <ListView
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
         android:id="@+id/homeListDetail_ListView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:divider="@color/line"
         android:dividerHeight="0.5dp"
         android:layout_below="@+id/homeListDetail_view"

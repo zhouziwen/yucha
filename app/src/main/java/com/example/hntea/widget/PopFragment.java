@@ -18,6 +18,7 @@ import com.example.hnTea.apcontains.FragmentTags;
 import com.example.hnTea.manager.PreManager;
 import com.example.hnTea.ui.BaseFragment;
 import com.example.hnTea.ui.home.shop.ShoppingFragment;
+import com.example.hnTea.ui.login.LoginActivity;
 import com.example.hnTea.utils.ShowFragmentUtils;
 import com.example.hnTea.utils.toast.ApToast;
 
@@ -67,21 +68,22 @@ public class PopFragment extends BaseFragment {
         });
         image3.setOnClickListener(v -> {
             //购物车
-            if (mShoppingFragment==null){
-                mShoppingFragment =new ShoppingFragment();
+            if (isLogin()){
+                if (mShoppingFragment==null){
+                    mShoppingFragment =new ShoppingFragment();
+                }
+                ShowFragmentUtils.showFragment(getActivity(),
+                        mShoppingFragment.getClass(),
+                        FragmentTags.FRAGMENT_SHOPPING,
+                        null,true);
             }
-            ShowFragmentUtils.showFragment(getActivity(),
-                    mShoppingFragment.getClass(),
-                    FragmentTags.FRAGMENT_SHOPPING,
-                    null,true);
         });
-        setDismissListener();
     }
 
     @Override
     protected void setData() {
         super.setData();
-
+        setDismissListener();
     }
 
     private void setDismissListener(){
@@ -102,6 +104,22 @@ public class PopFragment extends BaseFragment {
     }
     private void playImage3(){
         image3.animate().xBy(10f).yBy(-400f).alpha(1).setDuration(150).start();
+    }
+    private boolean isLogin(){
+        if (MyApplication.getInstance().isLogin()) {
+            //没有登录 提示去登录
+            showDialogWithMsg("当前未登录，是否前往登录？");
+            mDialog.setLeftButtonListener(() -> mDialog.dismiss());
+            mDialog.setRightButtonListener(() -> {
+                mDialog.dismiss();
+                //跳转登录
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                startActivity(intent);
+            });
+            return false;
+        }else {
+            return true;
+        }
     }
 }
 

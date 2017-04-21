@@ -9,7 +9,7 @@
         android:id="@+id/partner_pagerr"
         android:layout_width="match_parent"
         android:layout_height="170dp"
-        android:background="@mipmap/bannerjoinus"
+        android:background="@mipmap/banner_joinus"
         />
 
     <LinearLayout

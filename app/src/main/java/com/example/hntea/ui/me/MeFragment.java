@@ -23,6 +23,7 @@ import com.example.hnTea.mvppresenter.user.UserConfigPresenter;
 import com.example.hnTea.rxjava.RxEventBus;
 import com.example.hnTea.ui.BaseFragment;
 import com.example.hnTea.R;
+import com.example.hnTea.ui.home.shop.ShoppingFragment;
 import com.example.hnTea.ui.login.LoginActivity;
 import com.example.hnTea.ui.me.user.MyBillFragment;
 import com.example.hnTea.ui.me.user.MyOrderFragment;
@@ -45,6 +46,7 @@ public class MeFragment extends BaseFragment {
     private UserConfigPresenter mUserConfigPresenter;
     private ListView mListView;
     private TextView mUserPhone;
+    private ImageView mToShopping;
     private View headerView;
     private DimenAdapter<MeListModel> mAdapter;
     private ImageView mUserIcon;
@@ -57,6 +59,7 @@ public class MeFragment extends BaseFragment {
     private MyCollectFragment mMyCollectFragment;
     private MyInquiryFragment mMyInquiryFragment;
     private Subscription mSubscription;
+    private ShoppingFragment mShoppingFragment;
 
     @Override
     public void onStart() {
@@ -137,32 +140,42 @@ public class MeFragment extends BaseFragment {
         headerView = inflater.inflate(R.layout.me_list_header, null);
         mUserPhone = (TextView) headerView.findViewById(R.id.me_userPhone);
         mUserIcon = (ImageView) headerView.findViewById(R.id.me_listHeader_icon);
+        mToShopping = (ImageView) headerView.findViewById(R.id.me_shopping);
         mListView.addHeaderView(headerView);
     }
 
     @Override
     protected void setListener() {
         super.setListener();
-        mUserIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //点击用户头像事件
-                if (MyApplication.getInstance().isLogin()) {
-                    Intent intent = new Intent(getActivity(), LoginActivity.class);
-                    startActivity(intent);
-                } else {
-                    //我的信息
-                    if (toLogin()) {
-                        toCheckToken();
-                        if (mUserContentFragment == null) {
-                            mUserContentFragment = new UserContentFragment();
-                        }
-                        ShowFragmentUtils.showFragment(getActivity(),
-                                mUserContentFragment.getClass(),
-                                FragmentTags.FRAGMENT_USER_CONTENT,
-                                null, true);
+        mUserIcon.setOnClickListener(v -> {
+            //点击用户头像事件
+            if (MyApplication.getInstance().isLogin()) {
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                startActivity(intent);
+            } else {
+                //我的信息
+                if (toLogin()) {
+                    toCheckToken();
+                    if (mUserContentFragment == null) {
+                        mUserContentFragment = new UserContentFragment();
                     }
+                    ShowFragmentUtils.showFragment(getActivity(),
+                            mUserContentFragment.getClass(),
+                            FragmentTags.FRAGMENT_USER_CONTENT,
+                            null, true);
                 }
+            }
+        });
+        mToShopping.setOnClickListener(view -> {
+            //跳转购物车
+            if (toLogin()){
+                if (mShoppingFragment==null){
+                    mShoppingFragment =new ShoppingFragment();
+                }
+                ShowFragmentUtils.showFragment(getActivity(),
+                        mShoppingFragment.getClass(),
+                        FragmentTags.FRAGMENT_SHOPPING,
+                        null,true);
             }
         });
     }
